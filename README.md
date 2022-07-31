@@ -2,7 +2,10 @@
 1. [Course Intro](#course-introduction)
 1. [Intro to Programming](#introduction-to-programming)
 1. [Introduction to Python](#introduction-to-python)
-> I've linked each sub headings to its main heading, don't get lost and confused or make it chichè
+1. [Hello World](#hello-world)
+1. [Module 1 Graded Assessment](#module-1-graded-assessment-week-1)
+> I've linked each sub headings to its main heading, don't get lost and confused or make it chichè<br>
+
 # Course Introduction
 1. [Specialization Intro](#specialization-introduction)
 1. [Course Intro](#course-introduction-1)
@@ -13,10 +16,10 @@
 *If you work in IT, computer programming skills open up an incredible amount of opportunity. Being able to write scripts and programs that tell your computer to perform a task equips you with an invaluable tool. Not only does it make your work easier and more efficient, it can help you grow faster and advance further in your IT career. But how do you even start to learn a programming language like Python? How do you recognize when to tell a computer to perform a task? And how do you then write a program to actually get your computer complete the task you want it to do? The thought of learning to write a program in Python can make you feel a whole bunch of emotions excitement, anticipation that feeling of wanting to dive right in and get going and also fear. You might ask yourself, can I really learn how to code or do I have it in me? I'm here to tell you, yes, you can absolutely do this. Learning how to program can be scary and intimidating, but at the same time it's really fun and really exciting. In coding as in life, if we're going to get philosophical, the most rewarding work is usually a bit challenging, but ultimately well worth the effort. Of course, I'm able to say all this from experience, especially the cheesy parts. My name is Christine Rafla. I'm a systems administrator at Google and I'm going to be your instructor and guide in this course. The role of a sysadmin can vary a lot from company to company and even within different teams in the same company. I happen to work in the corporate identity and access management operations team, which is a really long way of saying that we make sure that everyone is represented correctly and if they need to access certain resources, they can. What I love the most about being a sysadmin is that the role has so many diverse functions. We handle loads of unique problems and edge cases from tinkering with different systems to collaborating with other teams. I am always learning something new, so it's really hard to get bored. It all starts with knowing how to automate, if you're an IT support specialist, a systems administrator, or in a role somewhere in between knowing how to get computers to do the hard work for you will set you apart from others in similar it roles and make your life much easier. Think about it, would you rather manually deploy 100 computers on your own or tell your computer to do it all for you all at once? No-brainer, right, having a coding skill set can help you grow into more specialized roles like a systems administrator, Cloud Solutions engineer, DevOps specialist, site reliability engineer, or who knows maybe even web developer or data analyst. The point is, being able to write a program is an essential tool in your IT toolkit and more and more employers are looking for these skills in the people they hire. If you've ever learned a new skill, like playing a musical instrument, speaking a foreign language, knitting, or skateboarding. You know that getting good at something new requires a lot of practice. For me, I love to learn new languages and I'm proud to say I speak Spanish, Arabic, French, and I even know ten words in Russian. Our world is shaped by the words and the languages we speak and while some words may be unique to one language you can always find similarities that help you learn and understand. Being able to connect the dots between cultures allows me to see things others might not, kind of sounds like this applies to IT programming,huh? My point is, whether you're learning French or Python, it 's never easy. You have to start small, learn the basics and practice those until you master them. Only then can you move on to more complex and impressive stuff and I'm here to help you along that path along with my colleagues who you'll meet in later courses. We'll start slow, master the foundation's together and you'll soon be ready for more challenging stuff. So are you wondering why we filmed this course in a cabin on a lake in Canada. The truth is were actually in a game room at one of the Google offices in Sunnyvale, California. We chose a different themed office space for each course of the program just to mix things up and I think I scored with this one. I should warn my manager that I'll be hanging out in this one well after the course ends because it's super comfy. By the end of this course, you'll understand the benefits of programming in IT roles. You'll be able to write simple programs using Python, figure out how the building blocks of programming fit together, and combine all this knowledge to solve a complex programming problem. That's right, by the end of this course, you're going to write a program in Python that's designed to solve a real-world IT problem, super exciting right? We'll start off by diving into the basics of writing a computer program. You'll get hands-on experience with programming concepts through interactive exercises and real-world examples. You'll quickly start to see how computers can perform a multitude of tasks. You just have to write code that tells them what to do. Along the way, we'll be talking about automation, which is process of getting computers to automatically do a task that us humans normally have to do by hand. Now, some of the stuff can get a little complex and confusing. I promise to do my best to make these lessons clear and easy to understand, but if you get stuck at any point, please feel free to re-watch the videos. Practice as much as you like and take the time you really need to stand these topics. The goal of this course isn't to teach you everything there is to know about software engineering because yikes, that would be a long course. Instead, we're going to introduce you to some of the key concepts of programming and scripting that will empower you to spot opportunities for automation in real life. You're about to learn a skill that can help you take your career to whole new levels. Are you excited? I'm excited, so let's jump in*
 
 # Introduction to Programming
-1. [Beginning of ur Program. Journey](#the-beginning-of-your-programming-journey)
-1. [What's Program.](#whats-programming)
+1. [Beginning of Your Programming Journey](#the-beginning-of-your-programming-journey)
+1. [What's Programming](#whats-programming)
 1. [What's Automation](#whats-automation)
-1. [Practice Quiz; Intro to Program.](#practice-quiz-introduction-to-programming)
+1. [Practice Quiz](#practice-quiz-introduction-to-programming)
 
 ### The Beginning of Your Programming Journey
 
@@ -28,13 +31,13 @@
 
 - *At a basic level, a computer program is a recipe of instructions that tells your computer what to do. When you write a program, you create a step by step recipe of what needs to be done to complete a task and when your computer executes the program it reads what you wrote and follows your instructions to the letter. The recipe is written in a code called programming language.*
 
-- *Programming languages are actually similar to humans spoken languages since they have a syntax and semantics.*
+- *Programming languages are actually similar to humans spoken languages since they have a <code>syntax</code> and <code>semantics</code>.*
 
-- *In a human spoken languages, syntax is the rules for how a sentence is constructed while semantics refers to the actual meaning of the statements.*
+- ***In a human spoken languages, <code>syntax</code> is the rules for how a sentence is constructed while <code>semantics</code> refers to the actual meaning of the statements.***
 
 - *In English Grammar, a sentence has a subject and predicate; that subject may be built using determiners, nouns, adjs. etc while the predicate may have verbs, conjuctions etc and there are certain rules build the sentence, called syntax. Thereafter a sense or meaning is fetched thru the sentence, called semantics. The same applies to the programming languages like Python.*
 
-- *Apart from the human languages, the programming languages say; syntax is the rules for how each instruction is written and the semantics is the effects the instructions have.*
+- ***Apart from the human languages, the programming languages say; <code>syntax</code> is the rules for how each instruction is written and the <code>semantics</code> is the effects the instructions have.***
 
 - *Much like spoken languages, there are lots of programming languages to choose from. Each has its own history, features, and applications but they all share the same fundamental ideas. So once you understand the basic concepts in one programming language, it becomes much easier to learn another.*
 
@@ -42,7 +45,7 @@
 
 ### What's Automation?
 
-- *Automation is the process of replacing a manual step with one that happens automatically.*
+- ***Automation is the process of replacing a manual step with one that happens automatically.***
 
 - *Let's face it, us humans are flawed and sometimes we make mistakes, a human performing the same tasks hundreds of times will never be as consistent as a machine doing the same thing.*
 
@@ -93,7 +96,7 @@
 
 ### What is Python?
 
-- *Welcome back. How did you do on your first quiz? If you ever find a question tricky, go back and review the videos and then try the quiz again.*
+- *Welcome back. How did you do on your first quiz? If you ever find a question tricky, go back and review the lessons and then try the quiz again.*
 
 - *So why pick Python? Well, we chose Python for a few reasons.*
 
@@ -115,7 +118,7 @@
 
 - *Python isn't new. Its first version was released by Guido van Rossum back in 1991. Since then, the community that develops it has grown and the language has advanced a lot. Whenever there's a significant change to the semantics or syntax of the language, a new major version is released. In 2000, Python 2 was released. In 2008, we got Python 3. And Python 3.7 was released in 2018. In this course, we'll use [Python 3.10.5](https://www.python.org/downloads/release/python-3105/) which came recently, on 6th June 6, 2022.*
 
-- *There's more tools available in Python for a growing range of applications. You can use Python to calculate statistics, run your e-commerce site, process images, interact with web services, and do a whole host of other tasks. Python is perfect for automation.*
+- *There are more tools available in Python for a growing range of applications. You can use Python to calculate statistics, run your e-commerce site, process images, interact with web services, and do a whole host of other tasks. Python is perfect for automation.*
 
 - *That's why Python is the language of choice for lots of people working in IT support, system administration, and web development. Not only that, but it's also used in fast-growing areas of IT, like machine learning or data analytics.*
 
@@ -187,3 +190,129 @@ for ($i=1; $i -le 10; $i++) {
 3. ***Convert the Bash print message <code>echo "Have a nice day"</code> into Python.***
 
 4. ***Print the correct Python commands to put “This is fun!” onto the screen 5 times.***
+
+# Hello World
+1. [Hello, World!](#hello-world-1)
+1. [Python as Calculator](#python-can-be-your-calculator)
+1. [Cheat Sheet](#first-programming-concepts-cheat-sheet)
+1. [Quiz](#practice-quiz-hello-world)
+
+### Hello, World!
+
+- ***Print is a Python function that writes what we tell it onto the screen.***
+
+- ***And Functions are pieces of code that perform a unit of work.***
+
+- *Notice how hello world is written between double quotation marks. Wrapping text in quotation marks indicates that the text is considered a string, which means it's text that will be manipulated by our script.*
+
+- *Now, for a bit of trivia, do you know why we printed the whole world in our example? Well, printing __hello world__ has been the __traditional__ way to start learning a programming language since way back in the '70s when it was used as the first example in a famous programming book called the __C__ programming language. So make it a standard practice to print "Hello, World!" everytime you commence to learn a new programming language.*
+
+### Python Can Be Your Calculator
+
+- *We are going to make Python our calculator, let's start with something easy. Open your Python interpreter;*
+```Python
+>>> 4+5
+9
+>>> 7*9
+63
+>>> -1/4
+-0.25
+>>> 1/3
+0.3333333333333333
+>>> 2**9
+512
+>>> 3**(1/2)
+1.7320508075688772
+>>>
+```
+
+- __Use "+" for addition, "-" for substraction, "*" for product of integers, "**" for the power.__
+
+### First Programming Concepts Cheat Sheet
+#### Keywords
+
+- ***Functions and keywords are the building blocks of a language’s syntax.***
+
+- *Keywords are reserved words that are used to construct instructions. We briefly encountered <code>for</code> and <code>in</code> so far.*
+
+- *Following are all the resered keys; <code>False</code>, <code>None</code>, <code>True</code>, <code>and</code>, <code>as</code>, <code>assert</code>, <code>break</code>, <code>class</code>, <code>continue</code>, <code>def</code>, <code>del</code>, <code>elif</code>, <code>else</code>, <code>except</code>, <code>finally</code>, <code>for</code>, <code>from</code>, <code>global</code>, <code>if</code>, <code>import</code>, <code>in</code>, <code>is</code>, <code>lambda</code>, <code>nonlocal</code>, <code>not</code>, <code>or</code>, <code>pass</code>, <code>raise</code>, <code>return</code>, <code>try</code>, <code>while</code>, <code>with</code> and <code>yield</code>.*
+
+#### Arithmatic Operators
+
+- ***a + b*** *= Adds **a** and **b***
+
+- ***a - b*** *= Substracts **b** from **a***
+
+- ___a*b___ *= Multiplies **a** with **b***
+
+- ___a**(1/2)___ *= The square root of an integer **a***
+
+- ***a/b*** *= Devides **a** by **b***
+
+- ___a**b___ *= Elevates __a__ to the power of __b__ or __b__ is __exponent__ of __a__*
+
+- ***a//b*** *= The integer or quotient part of the division of **a** by **b***
+
+- ***a%b*** *= The remainder part of the division of **a** by **b***
+
+### Practice Quiz; Hello World
+
+1. ***What are the functions in Python?***
+- [ ] Functions let us to use Python as a calculator
+- [ ] Functions are pieces of code that perform a unit of work
+- [ ] Functions are only used to print messages to the screen
+- [ ] Functions are how we tell if our program is functioning or not
+
+2. ***What are keywords in Python?***
+- [ ] Keywords are reserved words that are used to construct instructions
+- [ ] Keywords are used to calculate mathematical operations
+- [ ] Keywords are used to print messages like "Hello World!" to the screen
+- [ ] Keywords are the words that we need to memorize to program in Python
+
+3. ***What does the print function do in Python?***
+- [ ] The print function generates PDFs and sends it to the nearest printer
+- [ ] The print function stores values provided by the user
+- [ ] The print function outputs messages to the screen
+- [ ] The print function calculates mathematical operations
+
+4. ***Output a message that says "Programming in Python is fun!" to the screen.***
+
+5. ***Calculate the value of 5 to the power of 7/9, using Python.***
+
+# Module 1 Graded Assessment; Week 1
+1. ***What is computer program? Explain.***
+
+2. ***Define Automation.***
+
+3. ***Print "Automating with Python is fun!" using the print function.***
+
+4. ***Fill in the blanks so that the code prints "Yellow is the color of sunshine".***
+```Python
+color = ___
+thing = ___
+print(color + " is the color of " + thing)
+```
+
+5. ***Keeping in mind there are 86400 seconds per day, write a program that calculates how many seconds there are in a week, if a week is 7 days.  Print the result on the screen.***
+
+6. ***Use Python to calculate how many different passwords can be formed with 6 lower case English letters.  For a 1 letter password, there would be 26 possibilities.  For a 2 letter password, each letter is independent of the other, so there would be 26 times 26 possibilities.  Using this information, print the amount of possible passwords that can be formed with 6 letters.***
+
+7. ***Most hard drives are divided into sectors of 512 bytes each.  Our disk has a size of 16 GB. Fill in the blank to calculate how many sectors the disk has.***
+
+***Note: Your result should be in the format of just a number, not a sentence.***
+***Given;***
+```Python
+disk_size = 16*1024*1024*1024
+sector_size = 512
+sector_amount = ___
+
+print(sector_amount)
+```
+
+
+
+  ***Yikes! All the topics and practice quizzes have been completed of Week 1***<br>
+  ***Revise***<br>
+  ***Attempt Quizzes Again***<br>
+  ***Search for More Quizzes on Internet Related to Module 1***<br>
+  ***Then Proceed for Next Week; Week 2 is at wait for ya!***
