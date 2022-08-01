@@ -164,5 +164,53 @@ print("2 + 2 = " + (2 + 2))
 
 # Functions
 1. [Defining Functions](#defining-functions)
+1. [Returning Values](#returning-values)
 
 ### Defining Functions
+
+1. *We've been through some of built-in functions on Pythoon such as, the <code>print()</code>, <code>type()</code>, <code>str()</code> etc, but now we're going to see how to define our own functions to tell the computer to do things that the language is built-in functions don't.*
+
+2. *To define a function by you, start it with the <code>def</code> keyword which is already reserved by Python(saw this on Week 1), followed by the name we want to give our function alike we name a variable.*
+
+3. *After the name of function, we have <code>parameters</code> or <code>arguments</code> which are enclosed in parentheses <code>()</code>. Remember a parameter shouldn't start with an ineger*
+
+4. *A function can have no parameter or argument or it can have multiple parameters or arguments.*
+
+- *Parameters allow us to call a function and pass it data, with the data being available inside the function as variables with the same name as the parameters. Lastly, we put a colon <code>:</code> at the end of the line.*
+
+5. *After the colon <code>:</code>, the function body starts.*
+
+6. *It’s important to note that in Python the function body is delimited by indentation. This means that all code indented to the right following a function definition is part of the function body. The first line that’s no longer indented is the boundary of the function body. It’s up to you how many spaces you use when indenting -- just make sure to be consistent. So if you choose to indent with four spaces, you need to use four spaces everywhere in your code.*
+
+- *Let us define a function with an example, that will explain the above points;*
+```Python
+>>> def greet_her(name):
+...     print("Hey, how u been? Long time no see, " + name)
+...
+>>> greet_her("Milli")
+Hey, how u been? Long time no see, Milli
+>>>
+```
+
+- *As per point 2, we defined the above example's function with <code>def</code> keyword, followed by the function name, here I named it <code>greet_her</code>. This is totally upto you what you name but the same rules apply for function as we name variables*
+
+- *After the function name, here comes parameter or argument as <code>name</code>, enclosed by parenthesis and ended with a colon <code>:</code>, after the colon, the function body starts where you can use another function like <code>print()</code>. In the function body you can define as many line as you can*
+
+- *As per point 6, you must start the function body to the right as <code>print("Hey, how u been? Long time no see, " + name)</code>. Remember if you lengthen the body to more lines, all should start with the same space.*
+
+- *Let's clear this with the following example;*
+```Python
+>>> def greet_them(name1, name2, name3, name4):
+...    print("hey yo bro! " + name1)
+...    print("how u doing, angel, " + name2)
+...    print("yikes! " + name3)
+...    print("hell ya, cogy posy " + name4)
+...
+>>> greet_them("Lisa", "Jisoo", "Jennie", "Rosie")
+hey yo bro! Lisa
+how u doing, angel, Jisoo
+yikes! Jennie
+hell ya, cogy posy Rosie
+```
+
+### Returning Values
