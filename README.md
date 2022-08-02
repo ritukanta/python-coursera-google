@@ -1,6 +1,7 @@
 ***Week 2; Basic Python Syntax***
 1. [Expressions & Variables](#expressions-and-variables)
 2. [Functions](#functions)
+3. [Conditionals](#conditionals)
 
 
 # Expressions and Variables
@@ -168,6 +169,7 @@ print("2 + 2 = " + (2 + 2))
 1. [Returning Values Recap](#returning-values---recap)
 1. [Principles of Code Reuse](#principles-of-code-reuse)
 1. [Code Style](#code-style-refactoring-and-commenting)
+1. [Practice Quiz](#practice-quiz-functions)
 
 ### Defining Functions
 
@@ -319,3 +321,68 @@ Hey, Jay, your lucky number is 21
 # How comments look like in Python
 ```
 - *When your computer sees a hash character and understands that it should ignore everything that comes after that character on that line. Check out how this looks.*
+
+### Practice Quiz; Functions
+
+1. ***This function converts miles to kilometers (km).***
+```Python
+# 1) Complete the function to return the result of the conversion
+def convert_distance(miles):
+	km = miles * 1.6  # approximately 1.6 km in 1 mile
+
+my_trip_miles = 55
+
+# 2) Convert my_trip_miles to kilometers by calling the function above
+my_trip_km = ___
+
+# 3) Fill in the blank to print the result of the conversion
+print("The distance in kilometers is " + ___)
+
+# 4) Calculate the round-trip in kilometers by doubling the result,
+#    and fill in the blank to print the result
+print("The round-trip in kilometers is " + ___)
+```
+
+2. ***This function compares two numbers and returns them in increasing order.***
+***Hint: if a function returns multiple values, don't forget to store these values in multiple variables***
+```Python
+# This function compares two numbers and returns them
+# in increasing order.
+def order_numbers(number1, number2):
+	if number2 > number1:
+		return number1, number2
+	else:
+		return number2, number1
+
+# 1) Fill in the blanks so the print statement displays the result
+#    of the function call
+___, ___ = order_numbers(100, 99)
+print(smaller, bigger)
+```
+
+3. ***What are the values passed into functions as input called?***
+
+4. ***Let's revisit our lucky_number function. We want to change it, so that instead of printing the message, it returns the message. This way, the calling line can print the message, or do something else with it if needed. Fill in the blanks to complete the code to make it work.***
+```Python
+def lucky_number(name):
+  number = len(name) * 9
+  ___ = "Hello " + name + ". Your lucky number is " + str(number)
+  ___
+	    
+print(lucky_number("Kay"))
+print(lucky_number("Cameron"))
+```
+
+5. ***What is the purpose of the def keyword?***
+
+# Conditionals
+1. [Comparing Things](#comparing-things)
+
+### Comparing Things
+
+- *Python can also compare values; such <code>smaller than</code>, <code>greater than</code> and <code>equals to</code>, using the arithmatic operators <code><</code>, <code>></code> and <code>==</code> respectively.*
+
+- *Upon comparing values, your interpreter will state True or False, known as Boolen. <code>Boolean</code> is one of the two possible states: either<code>True</code> or <code>False</code>.*
+
+- *Check out the following examples;*
+```Python
