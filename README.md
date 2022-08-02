@@ -165,6 +165,9 @@ print("2 + 2 = " + (2 + 2))
 # Functions
 1. [Defining Functions](#defining-functions)
 1. [Returning Values](#returning-values)
+1. [Returning Values Recap](#returning-values---recap)
+1. [Principles of Code Reuse](#principles-of-code-reuse)
+1. [Code Style](#code-style-refactoring-and-commenting)
 
 ### Defining Functions
 
@@ -214,3 +217,105 @@ hell ya, cogy posy Rosie
 ```
 
 ### Returning Values
+
+- *We've seen how we can pass values into a function as parameters by passing values like in defining functions, but what about getting values out oof a function? This is where concept of <code>return values</code> comes to play.*
+
+- *The work that functions do can produce new results. Sure, we can print the results on the screen, but what if we wanted to use those results later in our script or didn't want to print them at all?*
+
+- *Imagine we need to calculate this value several times in our code. It would be useful to have a function that does this for us. Check out how this would look. We use the keyword return to tell Python that this is the return value of a function.*
+
+- *For example;*
+```Python
+>>> def area_of_triangle(length, width):
+...     return length*width/2
+...
+>>> area_of_1st_tri = area_of_triangle(16, 9)
+>>> area_of_2nd_tri = area_of_triangle(10, 6)
+>>> sum = area_of_1st_tri + area_of_2nd_tri
+>>> print("Sum of areas of the 2 triangles is " +  str(sum))
+Sum of areas of the 2 triangles is 102.0
+```
+
+- *In the above sample, we had to calculate the area of two triangles so here the return value determined length multiplied with width devided by 2 which is the area of a triangle. With <code>return</code> value statement we don't use parenthesis or colon.*
+
+- *This shows the power of the return statement. It allows us to combine calls to functions and to more complex operations which makes your code more reusable.*
+
+- *Another example;*
+```Python
+>>> def convert_seconds(seconds):
+...     hours = seconds//3600
+...     minutes =  (seconds-hours*3600)//60
+...     remaining_secs = seconds-hours*3600-minutes*60
+...     return hours, minutes, remaining_secs
+...
+>>> hours, minutes, seconds = convert_seconds(80)
+>>> print(hours, minutes, seconds)
+0 1 20
+```
+
+- *It is also possible to return no value, see this example;*
+```Python
+>>> def greet(name):
+...     print("Welcome, " + name)
+...
+>>> result = greet("Christine")
+Welcome, Christine
+>>> print(result)
+None
+```
+
+- *<code>None</code> is a special data type in Python used to indicate that things are empty or that they returned nothing.*
+
+### Returning Values - Recap
+
+- *Sometimes we don't want a function to simply run and finish. We may want a function to manipulate data we passed it and then return the result to us. This is where the concept of return values comes in handy. We use the return keyword in a function, which tells the function to pass data back. When we call the function, we can store the returned value in a variable. Return values allow our functions to be more flexible and powerful, so they can be reused and called multiple times.*
+
+- *Functions can even return multiple values. Just don't forget to store all returned values in variables! You could also have a function return nothing, in which case the function simply exits.*
+
+### Principles of Code Reuse
+
+- *As we've called out before, functions are powerful because you can create your own. You can use them to organize the code in your scripts into logical blocks, which makes the code you write easier to use and reuse. Check out this example.*
+```Python
+>>> name = "Jay"
+>>> number = len(name)*7
+>>> print("Hey, " + name + ", your lucky number is " + str(number))
+Hey, Jay, your lucky number is 21
+```
+
+- *First off, we defined the variable <code>name</code>, in the second line the <code>number</code> variable reused the code of variable "name". <code>len()</code> or length function is used to calculate length of words. Here we defined lucky number of name "Jay". What's your lucky number though?*
+
+### Code Style; Refactoring and Commenting
+
+- *Although styling code doesn't make a big difference in code accuracy or errornous but poor code style can mess up with regular programmers or system admins when it's need to make changes or read the code. Even bad style can give the author headache. Imagine you are having mess with your own code, that you had written before 6 months.*
+
+- *On the flip side, good style can make a script look almost like natural human language. It can make the scripts intent and construction immediately clear to the reader.*
+
+- *There are no certain rules or practices to style the code. First off, you need write code self-documenting as more as possible, write in a way that is readable and doesn't hide its intent.*
+
+- *See the example, which is really messy to look at;*
+```Python
+>>> def calculate(r):
+...     q=3.14
+...     z=q*(r**2)
+...     print(z)
+...
+>>> calculate(6)
+113.04
+```
+
+- *In programming, re-writing and self-documenting the code is called <code>refactoring</code>. So let's refactor this code, so that it will be more understandable;*
+```Python
+>>> def circle_area(radius):
+...     pi = 3.14
+...     area = pi * (radius**2)
+...     print(area)
+...
+>>> circle_area(6)
+113.04
+```
+
+- *Moreover refactoring and self-documenting, some times you can add a bit explanatory texts to the code. You can do this by adding that we call a <code>comment</code>, which starts with a hash <code>#</code>. When your computer sees a hash character and understands that it should ignore everything that comes after that character on that line. Check out how this looks.*
+```Python
+# How comments look like in Python
+```
+- *When your computer sees a hash character and understands that it should ignore everything that comes after that character on that line. Check out how this looks.*
