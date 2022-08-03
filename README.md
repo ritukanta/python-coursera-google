@@ -377,12 +377,149 @@ print(lucky_number("Cameron"))
 
 # Conditionals
 1. [Comparing Things](#comparing-things)
+1. [If Statements](#branching-with-if-statements)
+1. [Else Statements](#else-statements)
 
 ### Comparing Things
 
-- *Python can also compare values; such <code>smaller than</code>, <code>greater than</code> and <code>equals to</code>, using the arithmatic operators <code><</code>, <code>></code> and <code>==</code> respectively.*
+- *Python can also compare values; such as <code>smaller than</code>, <code>greater than</code> and <code>equals to</code>, using the arithmatic operators <code><</code>, <code>></code> and <code>==</code> respectively. We use <code>!=</code> operator for not equal values.*
 
 - *Upon comparing values, your interpreter will state True or False, known as Boolen. <code>Boolean</code> is one of the two possible states: either<code>True</code> or <code>False</code>.*
 
 - *Check out the following examples;*
 ```Python
+>>> print(10 > 4)
+True
+>>> print("cat" > "dog")
+False
+>>> print("cat" < "dog") # as "d" comes after "c" alphabetically
+True
+>>> print("cat" != "dog")
+True
+>>> print((1 + 78) < 10**5)
+True
+>>> print((1 + 79) == 80)
+True
+```
+
+```Python
+>>> print(1 < "1")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '<' not supported between instances of 'int' and 'str' # it is because 1 is an integer while "1" is a string
+>>> print(1 == float(1))
+True
+>>> print(1 == "1")
+False
+```
+
+- *As though they seem similar to us(1 and "1"), but for Python interpreter, they are totally different entities.*
+
+- *In alphabets, the words start with Uppercase letter is lesser than the words that start with Lowercase letter. Checkout the following;*
+```Python
+>>> print("Cat" < "cat")
+True
+>>>
+```
+
+- *Apart of these inequality operators, Python also consists of <code>Logical operators</code>. There operators allow you to connect multiple statements together and perform more complex comparisons. They are <code>and</code>, <code>or</code> and <code>not</code>.*
+
+- *To evaluate as true, the <code>and</code> operator would need both expressions to be true at the same time.*
+```Python
+print("CAT" < "Cat" and "dog" > "Dog")
+True
+```
+
+- *If we use the <code>or</code> operator, instead, the expression will be true if either of the expressions is true, and false only when both expressions are false.*
+```Python
+>>> print("CAT" > "Cat" or "dog" < "Dog")
+False
+```
+
+- *The <code>not</code> operator inverts the value of the expression that is infront of it. That means, if the given expression is true, the boolean will be false and vice versa.*
+```Python
+>>> print(not 1 == 1)
+False
+>>> print(not 1 == 21)
+True
+```
+
+### Branching with if Statements
+
+- *The ability of a program to alter its execution sequence is known as <code>branching</code>, and it's a key component in making your scripts useful.*
+
+- *In your scripts, you can instruct your computer to make decisions based on outputs to. Let's take an IT-based example, In a company, new employees can choose the username they'll use to access the system, and usually, the chosen username needs to fit with a given set of guidelines.*
+
+- *Let's assume that the at your company, a valid username has to have atleast three characters and you,ve been asked with writing a program that will tell user if their choices valid or not.*
+
+- *For that, you can call the function as below;*
+```Python
+>>> def username(name):
+...     if len(name) < 3:
+...        print("Invalid username! Atleast 3 characters long username is mandatory")
+...
+>>> username("la")
+Invalid username! Atleast 3 characters long username is mandatory
+```
+
+- *As usual, we define the function using the <code>def</code> keyword. And the <code>if</code> starts within the function body, followed by a <code>condition</code> is mandatory, ending with a colon <code>:</code>. Then another function starts within its function body, it may be a print() or something else. __If the condition after <code>if</code> keyword throw the boolean as <code>true</code> then the print() function will be executed or it'll be skipped.__*
+
+- *___Recap:___ We can use the concept of branching to have our code alter its execution sequence depending on the values of variables. We can use an __if__ statement to evaluate a comparison. We start with the __if__ keyword, followed by our comparison. We end the line with a __colon__. The body of the if statement is then indented to the right. If the comparison is __True__, the code inside the __if__ body is executed. If the comparison evaluates to __False__, __then the code block is skipped and will not be run.__*
+
+- *Another example;*
+```Python
+>>> def circle_radii(radius):
+...     if radius <= 0:
+...        print("The given ciecle is a Point or a Imaginary circle.")
+...
+>>> circle_radii(-3)
+The given ciecle is a Point or a Imaginary circle.
+```
+
+### else Statements
+
+- *In the last, we went through a very useful <code>if</code> construct, but we could make our more powerful. What if the condition of <code>if</code> code block becomes <code>False</code>, it was skipped, right? But what if we introduce a construct <code>else</code>. Like the def, if statements it also uses a colon, followed by another function; not only a print() but they can also do calculations, modify values, return values and a lot more.*
+
+- *Let,s checkout our last sample;*
+```Python
+>>> def username(name):
+...     if len(name) < 3:
+...        print("Invalid username! Atleast 3 charcters long username is mandtory")
+...     else:
+...         print("It's a valid username!")
+...
+>>> username("ka")
+Invalid username! Atleast 3 charcters long username is mandtory
+>>> username("rafla")
+It's a valid username!
+```
+
+- *We can also retun values in <code>if-else</code> statements;*
+```Python
+>>> def circle_radii(radius):
+...     if radius <= 0:
+...        print("It's a Point on the Plane or It's an Imaginary Circle.")
+...     else:
+...          return (22/3)*(radius)**2
+...
+>>> circle_radii(-11)
+It's a Point on the Plane or It's an Imaginary Circle.
+>>> circle_radii(11)
+887.3333333333333
+```
+
+- *And remember that you can choose to use as many or as few spaces as you want for the indentation, but you always need to indent and you always need to use the same number of spaces.*
+
+- *Let's have another example;*
+```Python
+>>> def integer(num):
+...     if num % 2 == 0:
+...         return True
+...     else:
+...          return False
+...
+>>> integer(7)
+False
+>>> integer(198)
+True
+```

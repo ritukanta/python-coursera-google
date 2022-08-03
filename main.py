@@ -74,4 +74,4 @@ square_2 = square_area(13)
 square_3 = square_area(8)
 sum = square_1 + square_2 + square_3
 
-print("The Sum of the Areas of Three Given Squares is, " + str(sum))   
+print("The Sum of the Areas of Three Given Squares is, " + str(sum))
