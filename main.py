@@ -60,7 +60,6 @@ cube(6)
 # Even u can not add comments in function body, that will end up with an error
 
 
-
 # Returning values
 # Resurn statement is useful when it's time to call the function multiple times
 # It is also possible that the function can return nothing
@@ -69,9 +68,37 @@ def square_area(diagonal):
     area = side**2
     return area
 
+
 square_1 = square_area(9)
 square_2 = square_area(13)
 square_3 = square_area(8)
 sum = square_1 + square_2 + square_3
 
 print("The Sum of the Areas of Three Given Squares is, " + str(sum))
+
+
+# Conditionals
+# Comparing thnings
+# This statement will throw a boolean as True 'cause "D" comes after "C", so it goes in the alphabetical order
+print("A Dog" > "A Cat")
+
+# this is also True because in Python, Uppercases are supposed to be smaller than lowercases
+print("DOG" < "dog")
+
+print(not "Dog" < "dog")  # Boolean is False as the given statement is true
+
+
+# If statements
+def logarithm(input, base):
+    if input == 1:
+        print("The value of the given logarithm is " + str(0))
+    elif input == base:
+        print("The value of the given logarithm is " + str(1))
+    elif base <= 0 and base == 1:
+        print("Logarith isn't defined")
+    else:
+        print("The logarithm is determined.")
+
+
+logarithm(5, 7)
+logarithm(1, 1)
