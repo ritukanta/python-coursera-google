@@ -34,6 +34,9 @@
 > - [OOP Graded Assessment](#oop-graded-assessment)<br>
 
 # Week 1; Hello Python
+<br>
+<br>
+
 ## Intro to programming
 
 1. ***What is a computer program?***<br>
@@ -50,6 +53,9 @@
 
 5. ***What are semantics when applied to programming and pseudocode?***<br>
 *ans.* *The effect the programming instructions have.*
+<br>
+<br>
+<br>
 
 ## Intro to Python
 
@@ -98,6 +104,9 @@ for (let i = 0; i < 10; i++) {
 for i in range(10):
   print(i)
   ```
+<br>
+<br>
+<br>
 
 ## Hello World
 
@@ -127,13 +136,271 @@ print(ratio)
 ratio = (1 + 5**(1/2))/2
 print(ratio)
 ```
+<br>
+<br>
+<br>
 
 ## Module 1 Graded Assessment
 
+16. ***What is a computer program?***<br>
+*ans.* *A step-by-step recipe of what needs to be done to complete a task, that gets executed by the computer.*
+
+17. ***What is automation?***<br>
+*ans.* *The process of replacing a manual step with one that happens automatically.*
+
+18. ***Which things can be done using Automation? Write down.***<br>
+*ans.* *Creating a report of how much each sales person has sold in the last month, Setting the home directory and access permissions for new employees joining your company, Designing the new webpage for your company, Populating your company's e-commerce site with the latest products in the catlog.*
+
+19. ***What are some characteristics of the Python progreamming language?***<br>
+*ans.* *Python programs are easy to write and understand, We can practice Python using wen interpreter or codepads as well as executing it locally.*
+
+20. ***How does Python compare to other programming languages?***<br>
+*ans.* *Each programming language has its advantages and disadvantages, learning a second programming language seems easier after learning the first.*
+
+21. ***Write a python script that outputs "Automating with Python is fun!" to the screen.***
+*ans.*
+```Python
+print("Automating with Python is fun!")
+```
+
+22. ***Fill in the blank so that the code prints "Yellow is the color of sunshine".***<br>
+```Python
+color = ___
+thing = ___
+print(color + " is the color of " + thing)
+```
+*ans.*
+```Python
+color = "Yellow"
+thing = "sunshine"
+print(color + " is the color of " + thing)
+```
+
+23. ***Keeping in mind there are 86400 seconds per day, write a program that calculates how many seconds there are in a week, if a week is 7 days. Print the result on the screen.***<br>
+*ans.*
+```Python
+seconds_per_day = 86400
+# there are 7 days in a week so,
+seconds_per_week = 7*86400
+print(seconds_per_week)
+```
+
+24. ***Use Python to calculate how many different passwords can be formed with 6 lower case English letters.  For a 1 letter password, there would be 26 possibilities.  For a 2 letter password, each letter is independent of the other, so there would be 26 times 26 possibilities.  Using this information, print the amount of possible passwords that can be formed with 6 letters.***<br>
+*ans.*
+```Python
+# there are 26 possibilities for a letter and there are 6 letters so,
+print(26**6)
+```
+
+25. ***Most hard drives are divided into sectors of 512 bytes each.  Our disk has a size of 16 GB. Fill in the blank to calculate how many sectors the disk has.***<br>
+***Note: Your result should be in the format of just a number, not a sentence.***
+```Python
+disk_size = 16*1024*1024*1024
+sector_size = 512
+sector_amount = ___
+
+print(sector_amount)
+```
+*ans.*
+```Python
+disk_size = 16*1024*1024*1024
+sector_size = 512
+sector_amount = disk_size/sector_size
+
+print(sector_amount)
+```
+<br>
+<br>
+<br>
+<br>
+<br>
+
 # Week 2; Basic Python Syntax
+<br>
+
 ## Expressions to Variables
+
+26. ***In this scenario, two friends are eating dinner at a restaurant. The bill comes in the amount of 47.28 dollars. The friends decide to split the bill evenly between them, after adding 15% tip for the service. Calculate the tip, the total amount to pay, and each friend's share, then output a message saying "Each person needs to pay: " followed by the resulting number.***<br>
+```Python
+bill = ___
+tip = bill * ___
+total = bill + ___
+share = ___ 
+print("")
+```
+*ans.* 
+```Python
+bill = 47.28
+tip = bill * (15/100)
+total = bill + tip
+share = total/2
+print("Each person needs to pay: " + str(share))
+```
+
+27. ***This code is supposed to take two numbers, divide one by another so that the result is equal to 1, and display the result on the screen. Unfortunately, there is an error in the code. Find the error and fix it, so that the output is correct.***<br>
+```Python
+numerator = 10
+denominator = 0
+result = numerator / denominator
+print(result)
+```
+*ans.*
+```Python
+numerator = 10
+denominator = 0
+result = numerator / (denominator+10)
+print(int(result))
+```
+
+28. ***Combine the variables to display the sentence "How do you like Python so far?" ***
+```Python
+word1 = "How"
+word2 = "do"
+word3 = "you"
+word4 = "like"
+word5 = "Python"
+word6 = "so"
+word7 = "far?"
+
+print(___)
+```
+*ans.*
+```Python
+word1 = "How"
+word2 = "do"
+word3 = "you"
+word4 = "like"
+word5 = "Python"
+word6 = "so"
+word7 = "far?"
+
+print(word1, word2, word3, word4, word5, word6, word7)
+```
+
+29. ***This code is supposed to display "2 + 2 = 4" on the screen, but there is an error. Find the error in the code and fix it, so that the output is correct.***
+```Python
+print("2 + 2 = " + (2 + 2))
+```
+*ans.*
+```Python
+print("2 + 2 = " + str(2 + 2))
+```
+
+30. ***What do you call a combination of numbers, symbols, or other values that produce a result when evaluated?***<br>
+*ans.* *An expression*
+<br>
+<br>
+<br>
+
 ## Functions
+
+31. ***This function converts miles into kilometers. (1) Complete the function to return the result of the conversion, (2) Call the function to convert the trip distance from miles to kms, (3) Fill in the blank to print the result of the conversion and (4) Calculate the round-trip in kms by doubling the result, and fill in the blank to print the result.***
+```Python
+# 1) Complete the function to return the result of the conversion
+def convert_distance(miles):
+	km = miles * 1.6  # approximately 1.6 km in 1 mile
+
+my_trip_miles = 55
+
+# 2) Convert my_trip_miles to kilometers by calling the function above
+my_trip_km = ___
+
+# 3) Fill in the blank to print the result of the conversion
+print("The distance in kilometers is " + ___)
+
+# 4) Calculate the round-trip in kilometers by doubling the result,
+#    and fill in the blank to print the result
+print("The round-trip in kilometers is " + ___)
+```
+*ans.*
+```Python
+# 1) Complete the function to return the result of the conversion
+def convert_distance(miles):
+	km = miles * 1.6  # approximately 1.6 km in 1 mile
+
+my_trip_miles = 55
+
+# 2) Convert my_trip_miles to kilometers by calling the function above
+my_trip_km = my_trip_miles * 1.6
+
+# 3) Fill in the blank to print the result of the conversion
+print("The distance in kilometers is " + str(my_trip_km))
+
+# 4) Calculate the round-trip in kilometers by doubling the result,
+#    and fill in the blank to print the result
+print("The round-trip in kilometers is " + str(my_trip_km*2))
+```
+
+32. ***This function compares two numbers and returns them in increasing order. Fill in the blank, so the print statement displays the result of the function call in order. Hint: if a function returns multiple values, do not forget to store these values in multiple variables.***<br>
+```Python
+# This function compares two numbers and returns them
+# in increasing order.
+def order_numbers(number1, number2):
+	if number2 > number1:
+		return number1, number2
+	else:
+		return number2, number1
+
+# 1) Fill in the blanks so the print statement displays the result
+#    of the function call
+___, ___ = order_numbers(100, 99)
+print(smaller, bigger)
+```
+*ans.*
+```Python
+# This function compares two numbers and returns them
+# in increasing order.
+def order_numbers(number1, number2):
+	if number2 > number1:
+		return number1, number2
+	else:
+		return number2, number1
+
+# 1) Fill in the blanks so the print statement displays the result
+#    of the function call
+smaller, bigger = order_numbers(100, 99)
+print(smaller, bigger)
+```
+
+33. ***What are the values passed into functions as input called?***<br>
+*ans.* *Parameters or Arguments.*
+
+34. ***Let's revisit our lucky_number function. We want to change it, so that instead of printing the message, it returns the message. This way, the calling line can print the message, or do something else with it if needed. Fill in the blanks to complete the code to make it work.***
+```Python
+def lucky_number(name):
+  number = len(name) * 9
+  ___ = "Hello " + name + ". Your lucky number is " + str(number)
+  ___
+	    
+print(lucky_number("Kay"))
+print(lucky_number("Cameron"))
+```
+
+*ans.*
+```Python
+def lucky_number(name):
+  number = len(name) * 9
+  result = "Hello " + name + ". Your lucky number is " + str(number)
+  return result
+	    
+print(lucky_number("Kay"))
+print(lucky_number("Cameron"))
+```
+
+35. ***What is the purpose of the <code>def</code> keyword?***<br>
+*ans.* *Used to define a new function*
+<br>
+<br>
+<br>
+
 ## Conditionals
+
+36. ___What is the value of this Python expression: (2**2)==4?___<br>
+*ans.* *True*
+```Python
+>>> print((2**2)==4)
+True
+```
 ## Module 2 Graded Assessment
 
 # Week 3; Loops
