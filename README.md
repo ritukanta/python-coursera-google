@@ -35,15 +35,13 @@
 *You'll formulate a problem statement to understand the challenge, conduct some research to see what options are available, then begin planning how you intend to solve the problem. Lastly, you'll write the code to implement your solution!*
 
 
-## The Next modules
+## The Next Modules
 
 - *The next lessons will be there in different branches in ascending order in numerical series, of the current repository, proceed with the same!*
 
 - *Analyse each corner thoroughly. Found tricky? Revise and practice the same. Attempt quizzes. Practice more. Internet has its mouth wide open. Immerse in it.*
 
 - *I am not going to make a dedicated page for installation for Python Interpreter. Don't wait for it. I don't think there's any lack of that on Internet. Simply install from [Python Org](https://www.python.org/downloads/) as per ur Operating System whatever it is; Windows, Linux or Mac. On Windows, you can use Powershell command line for Python after installing the interpreter. Just hit enter "python" there and there you go. Still I would recommend prefer YT for a proper installtion.*
-
-- *Besides the current syllabus, I'll provide additional projects on the current repository.*
 
 - *This is not going to be that tough fr.*<br>
 <br>
@@ -65,6 +63,20 @@
 <br>
 
 6. *[Week 6: Final Project](https://github.com/ritukanta/Python/tree/week-6 "Final Project")*<br>
+
+
+<br>
 <br>
 
-7. *[Additional Projects and Exercises](https://github.com/ritukanta/Python/tree/extra "Extra Projects and Exercises")*
+## Videos from All Modules
+
+- *You can download the videos from all the six modules either from __Mega__ or from __Gdrive__. These videos are super useful in the time when you've any trouble with textual lessons.*<br>
+<br>
+
+> *<code><<<<<<<[Mega](https://mega.nz/file/qUsmECSQ#hJ-1UAvM3NvJjPYqjceiJO-igj5lExWJZMxBezRZR2Y)>>>>>>></code>*<br>
+<br>
+<br>
+
+> *<code><<<<<<<[Gdrive](https://drive.google.com/file/d/1kV8cmd8WanjFOsGsCJiPXyu87khZ86el/view?usp=sharing)>>>>>>></code>*<br>
+<br>
+<br>
