@@ -11,6 +11,10 @@
 1. [Creating New Strings](#creating-new-strings)
 1. [Basic String Methods](#basic-string-methods-recap)
 1. [More String Methods](#more-string-methods)
+1. [Formatting Strings](#formatting-strings)
+1. [Formatting Strings: Recap](#formatting-strings-recap)
+1. [String Reference Cheat Sheet](#string-reference-cheat-sheet)
+1. [Formatting Expressions Cheat Sheet](#formatting-expressions-cheat-sheet)
 
 ### What is a String?
 
@@ -297,3 +301,132 @@ True
 >>> "So this is another banger".split()
 ['So', 'this', 'is', 'another', 'banger']
 ```
+
+### Formatting Strings
+
+- *Up to now, we've been making longer strings using plus sign, str() function, commas, and we call it concatenating. This works, but it's not the ideal. There's a better way to do this using the __format__ method.*
+
+- *Lets see a couple of examples:*
+```Python
+
+>>> name = "Montana"
+>>> number = len(name)*3
+>>>
+>>> print("Hello {}, your lucky number is {}".format(name, number))
+Hello Montana, your lucky number is 21
+```
+*First off, we defined two variables called __name__ and __number__, we could also have printed the string using concatenating but we used the __format__ method. Here we've used two __curly brackets {}__ as __place holders__ , for the two variables we first assigned, to show where the variables should be written. We then passed our variables as __parameters__ in the format method.*
+
+- *But one thing to notice here is the variable __name__ is a string while __number__ is an integer, still the format method manages itself in automatic conversions of data types. Remember, in concatenating we had to convert the integer into a string using __str()__ function. Pretty neat right?*
+
+- *The curly brackets __{}__ as place holders aren't always empty. We can use certain expressions inside them. Variables can also be used to re-write our code. Lets define our earlier example in a slightly different way:*
+```Python
+>>> print("Hello {name}, your lucky number is {number}".format(name="Montana", number=len(name)*3))
+Hello Montana, your lucky number is 21
+```
+
+- *Checkout a different example:*
+```Python
+>>> price = 7.5
+# tax rate is 9%
+>>> tax_rate = 9/100
+# calculate new price after applying the tax
+>>> with_tax = price + price*tax_rate
+>>>
+>>> print(price, with_tax)
+7.5 8.175
+```
+*Say we want to output the prices of an item with and without the tax. If the item costs __$7.5__ without any tax, and the tax rate is 9%, then the calculated price of the item with tax is __$8.175__. But want to print the prices with only two decimals after the decimal dot. Here we've to use certain expressions with format method, like this:*
+```Python
+>>> price = 7.5
+>>> tax_rate = 9/100
+>>> with_tax = price + price*tax_rate
+>>>
+>>> print(price, with_tax)
+7.5 8.175
+>>>
+>>> print("Base price is: ${:.2f}, and price with tax is: ${:.2f}".format(price, with_tax))
+Base price is: $7.50, and price with tax is: $8.18
+```
+*Here we've written a formatting expression between the curly brackets, we started with a colon to sepate, then __2f__, which means two floats after the decimal dot.*
+
+- *Look at this example:*
+```Python
+>>> def to_celsius(x):
+...      return (x - 32)*5/9
+...
+>>> for x in range(0, 101, 10):
+...     print("{:>3} F | {:>6.2f}".format(x, to_celsius(x)))
+...
+  0 F | -17.78
+ 10 F | -12.22
+ 20 F |  -6.67
+ 30 F |  -1.11
+ 40 F |   4.44
+ 50 F |  10.00
+ 60 F |  15.56
+ 70 F |  21.11
+ 80 F |  26.67
+ 90 F |  32.22
+100 F |  37.78
+>>>
+```
+*Here we're using the __>__ operator to align text to the right so the output is neatly aligned. In the first curly bracket's expression, we set the numbers to be aligned to the right for total of 3 white spaces. And in the second expression, it to be 6 white spaces to the right with two decimals.*
+
+### Formatting Strings: Recap
+
+- *You can use the format method on strings to concatenate and format in all sort of ways. To do this, we create strings containing curly brackets __{}__, as place holders, to be replaced by format parameters. Then we call format method using string.format() to pass the variables as __parameters__. These variables will then be used to replace the curly bracket place holders. This method automatically handles all conversions between any data types.*
+
+- *If the curly brackets are left empty, they'll be placed with those variables in the order in which they're called. However, you can put the variable names inside them, then use the names in the parameters. This allows for more easily readable code.*
+
+### String Reference Cheat Sheet
+#### String Operations
+
+- ***len(string)*** *- returns length of the string*
+
+- ***for x in string*** *- iterates over each character in the string*
+
+- ***substring in string*** *- checks whether the substring is in the given string*
+
+- ***string[i]*** *- accesses the character at index __i__*
+
+- ***string[i:j]*** *- access the substring starting at __i__ and ends at index __j-1__*
+
+#### String Methods
+
+- ***string.lower()*** *- returns in lower case characters*
+
+- ***string,upper()*** *- returns in upeer case characters*
+
+- ***string.strip()*** *- returns without white spaces from both ends*
+
+- ***string.lstrip()*** *- retunrs without left white spaces*
+
+- ***string.rstrip()*** *- returns without any right white space*
+
+- ***string.count(substring)*** *- returns the number of times a substring occurs*
+
+- ***string.isnumeric()*** *- checks if the string is only made up of integers*
+
+- ***string.isalpha()*** *- checks if the string is only of alphabets*
+
+- ***string.split()*** *- returns the list of substrings*
+
+- ***string.replace()*** *- returns a new string where all occurences of old one have been replaced by the new*
+
+> *For more string methods - [Documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)*
+
+### Formatting Expressions Cheat Sheet
+
+- **{:.2f}** *- returns with two decimals*
+```Python
+>>> "{:.2f}".format(19.8887)
+'19.89'
+```
+
+- ***{:.2s}** *- returns first two characters*
+```Python
+>>> "{:.2s}".format("Python")
+'Py'
+```
+> *For more Formatting Expressions - [Documentation](https://docs.python.org/3/library/string.html#format-specification-mini-language)*
