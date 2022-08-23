@@ -687,6 +687,55 @@ ValueError: list.remove(x): x not in list
 
 ### Modifying Lists
 
+- *While lists and strings are both sequences, a big difference between them is that lists are __mutable__, unlike strings. You can add, remove, or modify elements in a list.*
+
+- *New elements can be added to the end of a list using the __append__ method. You can call this method on a list using __dot notation (.)__ and pass in the element to be added as a parameter.*
+```Python
+>>> languages = ["Python", "JavaScript", "Java", "C++", "SQL", "PHP"]
+>>> languages.append("C#")
+>>>
+>>> print(languages)
+['Python', 'JavaScript', 'Java', 'C++', 'SQL', 'PHP', 'C#']
+```
+
+- *If you want to add an element to a list in a specific position, you can use the method __insert__. This method takes __two__ parameters: the first specifies the index in the list, and the second in the element to be added at that index. If you specifies an index that's larger than length of the list, the element will simply be added to end of the list.*
+```Python
+>>> languages.insert(3, "Rust")
+>>> print(languages)
+['Python', 'JavaScript', 'Java', 'Rust', 'C++', 'SQL', 'PHP', 'C#']
+>>>
+>>> languages.insert(9832176676376, 'Bootstrap')
+>>> print(languages)
+['Python', 'JavaScript', 'Java', 'Rust', 'C++', 'SQL', 'PHP', 'C#', 'Bootstrap']
+```
+
+- *Elements can be removed from a list using the __remove__ method. If the elememt isn't found in the list, you will get a __ValueError__ explaining that the element was not found in the list.*
+```Python
+>>> languages.remove('JavaScript')
+>>> print(languages)
+['Python', 'Java', 'Rust', 'C++', 'SQL', 'PHP', 'C#', 'Bootstrap']
+>>>
+>>> languages.remove('Kotlin')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+```
+
+- *You can also remove elements from a list using the __pop__ method. This method differs from the __remove__ method in that it takes an index as a parameter, and returns the element that was removed. This can be useful if you don't know whhat the value of the element is, but you know where it's located.*
+```Python
+>>> languages.pop(6)
+'C#'
+>>> print(languages)
+['Python', 'Java', 'Rust', 'C++', 'SQL', 'PHP', 'Bootstrap']
+```
+
+- *Finally, you can change an element in a list using indexing to overwrite the value stored at the specified index.*
+```Python
+>>> languages[2] = 'XML'
+>>> print(languages)
+['Python', 'Java', 'XML', 'C++', 'SQL', 'PHP', 'Bootstrap']
+```
+
 ### Lists and Tuples
 
 ### Tuples

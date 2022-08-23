@@ -150,3 +150,35 @@ print(fruits)
 # Modify or replace certain elements
 fruits[2] = "Strawberry"
 print(fruits)
+
+
+# Modifying Lists: Recap
+# append
+languages = ['Python', 'JavaScript', 'Java', 'C++', 'SQL', 'PHP']
+languages.append('C#')
+print(languages)
+
+
+# insert
+languages.insert(3, 'Rust')
+print(languages)
+
+languages.insert(9832176676376, 'Bootstrap')
+print(languages)
+
+
+# remove
+languages.remove('JavaScript')
+print(languages)
+
+# languages.remove('Kotlin')
+print(languages)
+
+# pop
+languages.pop(6)
+print(languages)
+
+
+# modify or assign new values to elements
+languages[2] = 'XML'
+print(languages)
