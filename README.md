@@ -2,6 +2,7 @@
 <br>
 
 1. [Strings](#strings)
+1. [Lists](#lists)
 
 # Strings
 
@@ -15,6 +16,7 @@
 1. [Formatting Strings: Recap](#formatting-strings-recap)
 1. [String Reference Cheat Sheet](#string-reference-cheat-sheet)
 1. [Formatting Expressions Cheat Sheet](#formatting-expressions-cheat-sheet)
+1. [Practice Quiz](#practice-quiz-strings)
 
 ### What is a String?
 
@@ -430,3 +432,273 @@ Base price is: $7.50, and price with tax is: $8.18
 'Py'
 ```
 > *For more Formatting Expressions - [Documentation](https://docs.python.org/3/library/string.html#format-specification-mini-language)*
+
+### Practice Quiz: Strings
+
+1. ***The is_palindrome function checks if a string is a palindrome. A palindrome is a string that can be equally read from left to right or right to left, omitting blank spaces, and ignoring capitalization. Examples of palindromes are words like kayak and radar, and phrases like "Never Odd or Even". Fill in the blanks in this function to return True if the passed string is a palindrome, False if not.***
+```Python
+def is_palindrome(input_string):
+	# We'll create two strings, to compare them
+	new_string = ""
+	reverse_string = ""
+	# Traverse through each letter of the input string
+	for ___:
+		# Add any non-blank letters to the 
+		# end of one string, and to the front
+		# of the other string. 
+		if ___:
+			new_string = ___
+			reverse_string = ___
+	# Compare the strings
+	if ___:
+		return True
+	return False
+
+print(is_palindrome("Never Odd or Even")) # Should be True
+print(is_palindrome("abc")) # Should be False
+print(is_palindrome("kayak")) # Should be True
+```
+
+2. ***Using the format method, fill in the gaps in the convert_distance function so that it returns the phrase "X miles equals Y km", with Y having only 1 decimal place. For example, convert_distance(12) should return "12 miles equals 19.2 km".***
+```Python
+def convert_distance(miles):
+	km = miles * 1.6 
+	result = "{} miles equals {___} km".___
+	return result
+
+print(convert_distance(12)) # Should be: 12 miles equals 19.2 km
+print(convert_distance(5.5)) # Should be: 5.5 miles equals 8.8 km
+print(convert_distance(11)) # Should be: 11 miles equals 17.6 km
+```
+
+3. ***If we have a string variable named Weather = "Rainfall", which of the following will print the substring or all characters before the "f"?***
+
+4. ***Fill in the gaps in the nametag function so that it uses the format method to return first_name and the first initial of last_name followed by a period. For example, nametag("Jane", "Smith") should return "Jane S."***
+```Python
+def nametag(first_name, last_name):
+	return("___.".format(___))
+
+print(nametag("Jane", "Smith")) 
+# Should display "Jane S." 
+print(nametag("Francesco", "Rinaldi")) 
+# Should display "Francesco R." 
+print(nametag("Jean-Luc", "Grand-Pierre")) 
+# Should display "Jean-Luc G." 
+```
+
+5. ***The replace_ending function replaces the old string in a sentence with the new string, but only if the sentence ends with the old string. If there is more than one occurrence of the old string in the sentence, only the one at the end is replaced, not all of them. For example, replace_ending("abcabc", "abc", "xyz") should return abcxyz, not xyzxyz or xyzabc. The string comparison is case-sensitive, so replace_ending("abcabc", "ABC", "xyz") should return abcabc (no changes made).***
+```Python
+def replace_ending(sentence, old, new):
+	# Check if the old string is at the end of the sentence 
+	if ___:
+		# Using i as the slicing index, combine the part
+		# of the sentence up to the matched string at the 
+		# end with the new string
+		i = ___
+		new_sentence = ___
+		return new_sentence
+
+	# Return the original sentence if there is no match 
+	return sentence
+	
+print(replace_ending("It's raining cats and cats", "cats", "dogs")) 
+# Should display "It's raining cats and dogs"
+print(replace_ending("She sells seashells by the seashore", "seashells", "donuts")) 
+# Should display "She sells seashells by the seashore"
+print(replace_ending("The weather is nice in May", "may", "april")) 
+# Should display "The weather is nice in May"
+print(replace_ending("The weather is nice in May", "May", "April")) 
+# Should display "The weather is nice in April"
+```
+
+# Lists
+
+1. [What is a List?](#what-is-a-list)
+1. [Lists Defined: Recap](#lists-defined-recap)
+1. [Modifying the Contents of a List](#modifying-the-contents-of-a-list)
+1. [Modifying Lists](#modifying-lists)
+1. [Lists and Tuples](#lists-and-tuples)
+1. [Tuples](#tuples)
+1. [Iterating over Lists and Tuples](#iterating-over-lists-and-tuples)
+1. [Iterating over Lists using Enumerate](#iterating-over-lists-using-enumerate)
+1. [List Comprehensions](#list-comprehensions)
+1. [List Comp. : Recap](#list-comprehensions-recap)
+1. [Lists and Tuples Operations Cheat Sheet](#lists-and-tuples-operations-cheat-sheet)
+1. [Practice Quiz](#practice-quiz-lists)
+
+### What is a List?
+
+- *So far, we've seen a lot of ready-to-use data types such as __integers__, __strings__, __Boolean__, __floats__ in detail.*
+
+- *Eventually you want to write the code that manipulates collections of items like a list of strings or a list of integers. This is where the __list__ data type comes in handy.*
+
+- *In Python, we use square brackets __[ ]__ to indicate where a list starts and ends. Lets checkout an example:*
+```Python
+>>> x = ["Now", "we", "are", "cooking!"]
+>>> print(x)
+['Now', 'we', 'are', 'cooking!']
+>>>
+>>> type(x)
+<class 'list'>
+>>>
+```
+*Here we've assigned a variable __x__ with the value as a list of strings.*
+
+- *Like in strings, we use __len()__ function to find out how many elements the given list has:*
+```Python
+>>> len(x)
+4
+```
+
+- *When calling __len()__ for a list, it does not matter how long each string is on its own, what matters is how many elements it contains. To check whether a certain element in there in the list, the keyword __in__ is used:*
+```Python
+>>> "Now" in x
+True
+>>> "Then" in x
+False
+>>> "cooking!" in x
+True
+>>> "Hello!" in x
+False
+```
+
+- *We can also use indexing to access individual elements depending on their position in the list. To do that, we use the square brackets __[ ]__ and the index we want to access, exactly like we did with strings.*
+```Python
+>>> print(x[0])
+Now
+>>> print(x[3])
+cooking!
+>>> print(x[4])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+```
+
+- *We can also use the indexes to create a slice of the list. You guessed, right? Exactly like we did slicing in strings.*
+```Python
+>>> print(x[1:3])
+['we', 'are']
+```
+
+- *If all this sounds really familiar to what we said about strings, then this lesson is working as intended. That's because, __strings__ and __lists__ are very similar data types and are both examples of __sequences__ in Python.*
+
+- *They both share a bunch of operations like iterating over them using for loops, indexing, slicing, len(), concatenating using plus operator, to verify if a certain element is there using the keyword "in".*
+```Python
+>>> for y in x:
+...     print(y)
+...
+Now
+we
+are
+cooking!
+```
+
+### Lists Defined: Recap
+
+- *Lists in Python are defined using square brackets __[ ]__, with elements stored inside it by commas __,__:*
+```Python
+>>> a = ["This", "is", "a", "rainbow"]
+>>>
+>>> b = [3,7, 11, 5, 13]
+>>>
+>>> type(a)
+<class 'list'>
+>>> type(b)
+<class 'list'>
+```
+
+- *The __len()__ function is used to return the number of elements a list contains:*
+```Python
+>>> len(a)
+4
+>>> len(b)
+5
+```
+
+- *We can also use the keyword __in__ to check if a specific element occurs in the list and return a __Boolean__ value: __True__ or __False__.*
+
+- *Similar to strings, lists can also use indexing to access certain elements in a list based on their position:*
+
+- *In Python, lists and strings are both examples of sequences of data. And these sequences have some similar properties: __i)__ being able to iterate over using __for-loops__ ; __ii)__ support indexing and slicing; __iii)__ using Len to measure the length of the sequence; __iv)__ using __+__ operator in order to concatenate; __v)__ using __in__, to check if a specific element or substring is there.*
+
+### Modifying the Contents of a List
+
+- *One of the differences between lists and strings is that lists are __mutable__, and strings aren't. This means we can __add__, __remove__, or __modify__ elements in a list.*
+
+- *We'll start with the simplest chnage: adding elements to a given list using __append__ method. Check this out:*
+```Python
+>>> fruits = ["Pineapple", "Mango", "Banana", "Apple"]
+>>>
+>>> fruits.append("Kiwi")
+>>> print(fruits)
+['Pineapple', 'Mango', 'Banana', 'Apple', 'Kiwi']
+```
+*The __append__ method adds new elements at the end of the list, it does not matter how long the list is. Even you could start an empty list, then add elements using __append__.*
+
+- *But to add an element in a specific position instead of at the end of the list, the __insert__ method is used:*
+```Python
+>>> fruits.insert(2, "Orange")
+>>> print(fruits)
+['Pineapple', 'Mango', 'Orange', 'Banana', 'Apple', 'Kiwi']
+```
+
+- *The __insert__ method takes an __index__ as first parameter and a new element as second parameter. It adds that element at the given index position in our list.*
+
+- *In lists, even if we use an index that exceeds its length as first parameter using __insert__ method, there will be no error. Instead the element will be added at the end of list:*
+```Python
+>>> fruits.insert(25, "Peach")
+>>> print(fruits)
+['Pineapple', 'Mango', 'Orange', 'Banana', 'Apple', 'Kiwi', 'Peach']
+```
+
+- *Like that we use __remove__ method to remove an element from our list:*
+```Python
+# Let's remove "Banana"
+>>> fruits.remove("Banana")
+>>> print(fruits)
+['Pineapple', 'Mango', 'Orange', 'Apple', 'Kiwi', 'Peach']
+```
+
+- *But what happens when we try to remove a element that isn't there in the list:*
+```Python
+>>> fruits.remove("Pear")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+```
+*Oops! got a __ValueError__, telling us the element doesn't exist in the list.*
+
+- *Another way we can remove elements is by using __pop__ method, which receives indexes:*
+```Python
+>>> fruits.pop(1)
+'Mango'
+>>> print(fruits)
+['Pineapple', 'Orange', 'Apple', 'Kiwi', 'Peach']
+```
+*The __pop__ method returns the element that was removed at the index that was passed.*
+
+- *In the last way to modify the contents of a list is to change an item by assigning something else at that position:*
+```Python
+>>> fruits[3] = "Strawberry"
+>>> print(fruits)
+['Pineapple', 'Orange', 'Apple', 'Strawberry', 'Peach']
+# "Kiwi" got replaced by "Strawberry"
+```
+
+### Modifying Lists
+
+### Lists and Tuples
+
+### Tuples
+
+### Iterating over Lists and Tuples
+
+### Iterating over Lists Using Enumerate
+
+### List Comprehensions
+
+### List Comprehensions: Recap
+
+### Lists and Tuples Operations Cheat Sheet
+
+### Practice Quiz: Lists
