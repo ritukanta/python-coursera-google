@@ -182,3 +182,24 @@ print(languages)
 # modify or assign new values to elements
 languages[2] = 'XML'
 print(languages)
+
+
+# Tuples
+full_name = ('Grace', 'M', 'Hopper')
+print(type(full_name))
+
+print(full_name)
+
+
+# function returning more than one value, is actually returning a tuple of elements
+def convert_seconds(seconds):
+    hours = seconds//3600
+    minutes = (seconds - hours*3600)
+    remaining_seconds = seconds - hours*3600 - minutes*60
+    return hours, minutes, remaining_seconds
+
+
+result = convert_seconds(700)
+print(result)
+
+print(type(result))

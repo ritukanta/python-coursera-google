@@ -738,7 +738,43 @@ ValueError: list.remove(x): x not in list
 
 ### Lists and Tuples
 
+- *As we called out before, there are a number of data types in Python that are all sequences.*<br>
+
+***Strings:*** *Strings are sequences of characters, and are __immutable__.*<br>
+***Lists:*** *Lists are sequences of elements of any type, and are __mutable__.*
+
+- *There'a a third data type that is also a sequence and closely related to lists called __tuples__. ___Tuples:___ Tuples are sequences of elements of any type, and are **immutable**. Tuples are written parentheses **( )** instead of square brackets **[ ]**. For example:*
+```Python
+>>> full_name = ('Grace', 'M', 'Hopper')
+>>> type(full_name)
+<class 'tuple'>
+```
+
+- *We've the list data type then why tuples? There are cases when we want to make sure an element in a certain position or index and will not change. In these situations, lists won't help us. In other words, when using tuples, the position of elements inside them have meaning.*
+
+- *Tuples are used for a lot of different things in Python. One common example is the return values of a function. When a function returns more than one values. it's actually returning a tuple. Remember the function to convert seconds to hours, mitutes and seconds that we saw a while back:*
+```Python
+>>> def convert_seconds(seconds):
+...     hours = seconds//3600
+...     minutes = (seconds - hours*3600)//60
+...     remaining_seconds = seconds - hours*3600 - minutes*60
+...     return hours, minutes, remaining_seconds
+...
+>>> result = convert_seconds(700)
+>>> print(result)
+(0, 11, 40)
+>>> type(result)
+<class 'tuple'>
+```
+*This function return three values or we can say, it returns a tuple of three elements.*
+
 ### Tuples
+
+- *Tuples are like lists, since they are exaples of sequences and can contain elements of any type. But unlike lists, tuples are immutable. They are specified using parentheses instead of square brackets.*
+
+- *Tuples can be useful when we need to ensure that an element is in a certain position and won't change.*
+
+- *Since lists are mutable, the order of elements can be changed on us. Since the order of elements in a tuple can not be changed, the position of elements can have meaning.*
 
 ### Iterating over Lists and Tuples
 
