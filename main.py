@@ -203,3 +203,30 @@ result = convert_seconds(700)
 print(result)
 
 print(type(result))
+
+
+# Iterating over Lists
+animals = ['Lion', 'Zebra', 'Dolphin', 'Monkey']
+chars = 0
+for animal in animals:
+    chars += len(animal)
+
+print("Total characters: {}, Average length: {}".format(chars, chars/len(animals)))
+
+
+# another example
+winners = ['Ashley', 'Dylan', 'Reese']
+for index, person in enumerate(winners):
+    print("{} - {}".format(index + 1, person))
+
+
+# another
+def full_emails(people):
+    value = []
+    for email, name in people:
+        value.append("{} <{}>".format(name, email))
+    return value
+
+
+print(full_emails([('alex75@outlook.com', 'Alex Diego'),
+      ('shay@gmail.com', 'Shay Brandt')]))
