@@ -823,20 +823,61 @@ My Name <me@example.com>
 
 ### Iterating over Lists Using Enumerate
 
-- *
-
-
-
-
-
-
-
-
-
+- *When we covered __for__ loops, we showed the example of a iteration over a list. This lets you iterate over each element in the list, exposing the element to the __for__ loop as variable. But what if you want to access the elements in a list, along with the index of the elements in question? You can do this by using the <code>enumerate()</code> function. The __enumerate()__ function takes a list as parameter and returns a tuple for each element in the list. The first value of the tuple is the index and the second value is the element itself.*
 
 ### List Comprehensions
 
+- *Let's talk about creating lists in a shorter way. Say we wanted to create a list with multiples of 7 from 7 to 10, we could do it like this:*
+```Python
+>>> multiples = []
+>>> for x in range(1, 11):
+...     multiples.append(x*7)
+...
+>>> print(multiples)
+[7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
+```
+*This works fine but because creating lists based on sequences in such a common task, Python provides a technique called __list comprehension__. This is how we could do the same with list comprehensions.*
+```Python
+>>> multiples1 = [x*7 for x in range(1, 11)]
+>>> print(multiples1)
+[7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
+```
+*List comprehensions let us create new lists based on sequences or ranges. So we can use this technique whenever we want to create a list based on a range like in this example. Its syntax may seem bit confusing sometimes. Let's checkout a different example. Say we have a list of strings and we want to generate a list of the length of the strings. We can do this like the following:*
+```Python
+>>> langs = ['Python', 'Perl', 'Ruby', 'Go', 'Java', 'C++']
+>>> lengths = [len(lang) for lang in langs]
+>>> print(lengths)
+[6, 4, 4, 2, 4, 3]
+```
+
+- *List comprehensions also let us use a __conditional__ clause. Say we want all integers between 1 to 100 which are divisible by 3:*
+```Python
+>>> z = [ x for x in range(0, 101) if x%3 == 0]
+>>> print(z)
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99]
+```
+
+- *Using list comprehensions in Python is totally optional. Sometimes it can make the code look nicer and more readable, in other hands it can have the opposite effect, especially if we try to pack too much info together.*
+
 ### List Comprehensions: Recap
+
+- *You can create lists from sequences using a __for__ loop, but there's a more streamlined way to do this: __list comprehension__. This allows you to create a new list from a sequence or a range in a single line.*
+
+- _For example, **[x*2 for x in range(1, 11)]** is a simple list comprehension. This will iterate over the range 1 to 10, and multiply each element in the range by 2:_
+```Python
+>>> two = [x*2 for x in range(1, 11)]
+>>> print(two)
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+
+- *You can also use the conditionals with list comprehensions to build even more complex and powerful statements. You can do this by appending an __if__ statement to the end of the comprehension. For example, __[x for x in range(1, 101) if x%10 == 0]__ would generate a list containing all integers divisible by 10 from 1 to 100.*
+```Python
+>>> ten = [x for x in range(0, 101) if x%10 == 0]
+>>> print(ten)
+[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+- *List comprehensions can be really powerful, but they can also be super complex, resulting in code that's hard to read. Be careful when using them, since it might make more difficult for someone else looking at your code to easily understand what the code is doing.*
 
 ### Lists and Tuples Operations Cheat Sheet
 

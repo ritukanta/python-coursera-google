@@ -230,3 +230,24 @@ def full_emails(people):
 
 print(full_emails([('alex75@outlook.com', 'Alex Diego'),
       ('shay@gmail.com', 'Shay Brandt')]))
+
+
+# List Comprehension
+multiples = []
+for x in range(1, 11):
+    multiples.append(x*7)
+
+print(multiples)
+# but we could do the same using list comprehension
+multiples1 = [x*7 for x in range(1, 11)]
+print(multiples1)
+
+
+# Another example of List comprehension
+langs = ['Python', 'Perl', 'Ruby', 'Go', 'Java', 'C++']
+lengths = [len(lang) for lang in langs]
+print(lengths)
+
+# List comp with if condition
+z = [x for x in range(0, 101) if x % 3 == 0]
+print(z)
