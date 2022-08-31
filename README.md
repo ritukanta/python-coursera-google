@@ -881,4 +881,140 @@ My Name <me@example.com>
 
 ### Lists and Tuples Operations Cheat Sheet
 
+- *Lists and tuples are both sequences, so they share a number of sequence operations. But, because lists are mutable, there are also a number of methods specific just to lists.*
+#### Common Sequence Operations
+
+- ***len(sequence)*** *- Returns the length of the sequence*
+
+- ***for element in sequence*** *- Iterates over each element in the sequence*
+
+- ***element in sequence*** *- Checks whether the element is a part of the sequence*
+
+- ***sequence[i]*** *- Accesses the element at index __i__*
+
+- ***sequence[i:j]*** *- Accesses the slice starting at index __i__, ending at __(j-1)__*
+
+- ***for index, element in enumerate(sequence)*** *- Iterates over the both the indexes and the elements in the sequence at the same time*<br>
+> *Check out the [official documentation for sequence operations](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)*
+
+#### Lists-specific Operations and Methods
+
+- ***list[ i ] = x*** *- Replaces the element at index __i__ with __x__*
+
+- ***list.append(x)*** *- Adds __x__ to the end of the list*
+
+- ***list.insert(i, x)*** *- Inserts __x__ at the index __i__*
+
+- ***list.pop(i)*** *- Returns the element at index __i__, also removes it from the list. If __i__ is ommitted, the last element is returned and removed.*
+
+- ***list.remove(x)*** *- Removes the first occurence of __x__ in the list*
+
+- ***list.sort()*** *- Sorts the items in the list*
+
+- ***list.reverse()*** *- Reverses the order of items of the list*
+
+- ***list.clear()*** *- Removes all elements from the list*
+
+- ***list.copy()*** *- Creates a copy of the list*
+
+- ***list.extend(other_list)*** *- Appends all the elements of the __other_list__ at the end of the first list*<br>
+
+> *Check out the [list specific documentation](https://docs.python.org/3/library/stdtypes.html#lists)*
+
 ### Practice Quiz: Lists
+
+1. ***Given a list of filenames, we want to rename all the files with extension hpp to the extension h. To do this, we would like to generate a new list called newfilenames, consisting of the new filenames. Fill in the blanks in the code using any of the methods you’ve learned thus far, like a for loop or a list comprehension.***
+```Python
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+# Generate newfilenames as a list containing the new filenames
+# using as many lines of code as your chosen method requires.
+___  
+
+print(newfilenames) 
+# Should be ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+```
+
+2. ***Let's create a function that turns text into pig latin: a simple text transformation that modifies each word moving the first character to the end and appending "ay" to the end. For example, python ends up as ythonpay.***
+```Python
+def pig_latin(text):
+  say = ""
+  # Separate the text into words
+  words = ___
+  for word in words:
+    # Create the pig latin word and add it to the list
+    ___
+    # Turn the list back into a phrase
+  return ___
+		
+print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
+print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
+```
+
+3. ***The permissions of a file in a Linux system are split into three sets of three permissions: read, write, and execute for the owner, group, and others. Each of the three values can be expressed as an octal number summing each permission, with 4 corresponding to read, 2 to write, and 1 to execute. Or it can be written with a string using the letters r, w, and x or - when the permission is not granted.***
+```Python
+def octal_to_string(octal):
+    result = ""
+    value_letters = [(4,"r"),(2,"w"),(1,"x")]
+    # Iterate over each of the digits in octal
+    for ___ in [int(n) for n in str(octal)]:
+        # Check for each of the permissions values
+        for value, letter in value_letters:
+            if ___ >= value:
+                result += ___
+                ___ -= value
+            else:
+                ___
+    return result
+    
+print(octal_to_string(755)) # Should be rwxr-xr-x
+print(octal_to_string(644)) # Should be rw-r--r--
+print(octal_to_string(750)) # Should be rwxr-x---
+print(octal_to_string(600)) # Should be rw-------
+```
+
+4. ***Tuples and lists are very similar types of sequences. What is the main thing that makes a tuple different from a list?***
+
+5. ***The group_list function accepts a group name and a list of members, and returns a string with the format: group_name: member1, member2, … For example, group_list("g", ["a","b","c"]) returns "g: a, b, c". Fill in the gaps in this function to do that.***
+```Python
+def group_list(group, users):
+  members = ___
+  return ___
+
+print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
+print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
+print(group_list("Users", "")) # Should be "Users:"
+```
+
+6. ***The guest_list function reads in a list of tuples with the name, age, and profession of each party guest, and prints the sentence "Guest is X years old and works as __." for each one. For example, guest_list(('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")) should print out: Ken is 30 years old and works as Chef. Pat is 35 years old and works as Lawyer. Amanda is 25 years old and works as Engineer. Fill in the gaps in this function to do that.***
+```Python
+def guest_list(guests):
+	for ___:
+		___
+		print(___.format(___))
+
+guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
+
+#Click Run to submit code
+"""
+Output should match:
+Ken is 30 years old and works as Chef
+Pat is 35 years old and works as Lawyer
+Amanda is 25 years old and works as Engineer
+"""
+```
+
+# Dictionaries
+
+### What is a Dictionary?
+
+### Dictionaries Defined
+
+### Iterating over the Contenets of a Dictionary
+
+### Iterating over Dictionaries
+
+### Dictionaries vs. Lists
+
+### Dictionary Methods Cheat Sheet
+
+### Practice Quiz: Dictionaries

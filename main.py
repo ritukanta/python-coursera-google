@@ -251,3 +251,24 @@ print(lengths)
 # List comp with if condition
 z = [x for x in range(0, 101) if x % 3 == 0]
 print(z)
+
+
+# practice: lists #1
+filenames = ["program.c", "stdio.hpp",
+             "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+newfilenames = [file.replace(".hpp", ".h") for file in filenames]
+print(newfilenames)
+
+# 2
+
+
+def pig_latin(text):
+    say = ""
+    words = text.split()
+    for word in words:
+        say = say + word[1:] + word[0] + "ay "
+    return say
+
+
+print(pig_latin("hello how are you"))
+print(pig_latin("programming in python is fun"))
