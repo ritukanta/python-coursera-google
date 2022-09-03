@@ -272,3 +272,60 @@ def pig_latin(text):
 
 print(pig_latin("hello how are you"))
 print(pig_latin("programming in python is fun"))
+
+
+# Dictionaries
+# Define a dict
+file_counts = {'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23}
+print(file_counts)
+print(type(file_counts))
+
+# Get values using keys
+print(file_counts['txt'])
+
+# Check whether a key is there using "in"
+print('csv' in file_counts)
+print('kt' in file_counts)
+print('html' in file_counts)
+
+
+# Insert new key-value pairs
+file_counts['cfg'] = 8
+print(file_counts)
+
+# Assign new values to an existing key
+file_counts['csv'] = 17
+print(file_counts)
+
+# Remove a key-value pair from the dict
+del file_counts['cfg']
+print(file_counts)
+
+# Iterate over elements of a dict
+for extension in file_counts:
+    print(extension)
+
+
+# Items method
+for ext, amount in file_counts.items():
+    print("There are {} files with the .{} extension".format(amount, ext))
+
+# Keys methods
+print(file_counts.keys())
+
+# Values method
+print(file_counts.values())
+
+
+# count letters function
+def count_letters(text):
+    dict1 = {}
+    for letter in text:
+        if letter not in dict1:
+            dict1[letter] = 0
+        dict1[letter] += 1
+    return dict1
+
+
+print(count_letters("aaaaaaaaaaaaaAAAAAAAAAaaaa"))
+print(count_letters("A really looooooooooooooooooong text with a lot of letter"))

@@ -3,6 +3,7 @@
 
 1. [Strings](#strings)
 1. [Lists](#lists)
+1. [Dictionaries](#dictionaries)
 
 # Strings
 
@@ -1005,16 +1006,183 @@ Amanda is 25 years old and works as Engineer
 
 # Dictionaries
 
+1. [What is a Dictionary?](#what-is-a-dictionary)
+1. [Dictionaries Defined](#dictionaries-defined)
+1. [Iterating over Contents of a Dict](#iterating-over-the-contenets-of-a-dictionary)
+1. [Itarating over Dicts](#iterating-over-dictionaries)
+1. [Dicts vs. Lists](#dictionaries-vs-lists)
+1. [Dicts Cheat Sheet](#dictionary-methods-cheat-sheet)
+
 ### What is a Dictionary?
 
+- *We're now going to learn about another data type, dictionaries. Like lists, dictionaries are used to organize elements into collections. Unlike lists, you can't access elements inside dictionaries using their position or index. Instead the data inside a dictionary take the form of pairs of keys and values. To get a dictionary value we use its corresponding key. Another way these two vary is while in list the index must be a number, in dictionary you can use a bunch of data types as keys, like strings, integers, floats, tuples, and more.*
+
+- *Let's checkout an example, you can create an empty dictionary like we did while creating an empty list, but instead of square brackets <code>[ ]</code>, curly brackets <code>{ }</code> are used for creating dictionaries.*
+```Python
+>>> x = {}
+>>> type(x)
+<class 'dict'>
+```
+
+- *Let's checkout an example dictionary,*
+```Python
+>>> file_counts = {'jpg':10, 'txt':14, 'csv':2, 'py':23}
+>>> print(file_counts)
+{'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23}
+```
+
+- *When creating the dictionary we use the colons between the __key__ and the __value__, separate each pair by commas. Let's say you want to find out how many text "txt" files are there in the given dictionary. You can do this as the following:*
+```Python
+>>> file_counts['txt']
+14
+```
+*You can also use the __in__ keyword to check if a key is contained in the dictionary.*
+```Python
+>>> 'csv' in file_counts
+True
+>>> 'kt' in file_counts
+False
+>>> 'html' in file_counts
+False
+```
+
+- *Dictionaries are mutable. It means you can add, remove and replace entries. To add an entry in a dictionary, just use the square brackets to create a new key and assign it a value.*
+```Python
+>>> file_counts['cfg'] = 8
+>>> print(file_counts)
+{'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23, 'cfg': 8}
+```
+*Using this we can also assign new values to the keys that already exist in the dictionary:*
+```Python
+>>> file_counts['csv'] = 17
+>>> print(file_counts)
+{'jpg': 10, 'txt': 14, 'csv': 17, 'py': 23, 'cfg': 8}
+```
+
+- *Last off, we can also delete keys using the <code>del</code> keyword, followed by the dictionary with that key in square brackets.*
+```Python
+>>> del file_counts['cfg']
+>>> print(file_counts)
+{'jpg': 10, 'txt': 14, 'csv': 17, 'py': 23}
+```
 ### Dictionaries Defined
+
+- *Dictionaries are another data structures in Python. They are similar to a list in that they can be used to organize data into collections. However, data in a dictionary isn't accessed based on its position. Data in a dictionary is organized into pairs of <code>keys</code> and <code>values</code>. You use the key to access the corresponding value.*
+
+- *When creating a dictionary, we use curly brackets <code>{ }</code>. When storing values in a dictionary, the key is specified first, followed by the corresponding value separated by a colon. For example, __animals = {'bears':10, 'lions':1, 'tigers':2}__ creates a dictionary with three key value pairs, stored in the variable called __animals__. The key 'bears' points the integer value 10, while the key 'lions' points to 1, and 'tigers' points to the integer 2. You can access the values referencing the key, like this: __animals[ 'bears' ]__. This would return the integer 10, since that's the corresponding value for this key.*
+
+- *You can also check if a key is contained in a dictionay using the __in__ keyword. Just like other uses of this keyword, it will return True if the key is found in the dictionary; otherwise it will return False.*
+
+- *Dictionaries are mutable, meaning they can be modified by adding, removing and replacing elements in a dictionary. Similar to lists, you can add a new key value pair to a dictionary by assigning a value to the key, like this: __animals[ 'zebras' ] = 2__. This creates the new key in __animals__ dictionary as 'zebras', and stores the value 2. You can modify the value of an existing key by doing the same thing. Lastly, you can remove elements from a dictionary by using the <code>del</code> keyword.*
 
 ### Iterating over the Contenets of a Dictionary
 
+- *You can use <code>for</code> loops to over elements of a dictionary just like we did with strings, lists and tuples.*
+```Python
+>>> file_counts = {'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23}
+>>> for extension in file_counts:
+...     print(extension)
+...
+jpg
+txt
+csv
+py
+```
+*So if you are using __for__ loop in a dictionary, it iterates the keys in the given dictionary.*
+
+- *If you want to iterate through the associated values, you can either use the keys as indexes or you can use the <code>items()</code> method which returns a tuple for each element in the dictionary.
+```Python
+>>> for ext, amount in file_counts.items():
+...     print("There are {} files with the .{} extension".format(amount, ext))
+...
+There are 10 files with the .jpg extension
+There are 14 files with the .txt extension
+There are 2 files with the .csv extension
+There are 23 files with the .py extension
+``` 
+
+- *Sometimes you might just be interested in the keys of the dictionary, other times you might just want the values. You can access both with their corresponding dictionary methods: <code>keys()</code> and <code>values()</code>.*
+```Python
+>>> file_counts.keys()
+dict_keys(['jpg', 'txt', 'csv', 'py'])
+>>>
+>>> file_counts.values()
+dict_values([10, 14, 2, 23])
+```
+*So we can use __items__ method to get key-value pairs, __keys__ method to get the keys and __values__ for values in a dictionary.*
+
+- *Because we know that each key can be present only once, dictionaries are a great tool for counting elements and analyzing frequency. Let's checkout a simple example of counting how many times each letter appers in a piece of text.*
+```Python
+>>> def count_letters(text):
+...     dict1 = {}
+...     for letter in text:
+...         if letter not in dict1:
+...             dict1[letter] = 0
+...         dict1[letter] += 1
+...     return dict1
+...
+>>>
+>>> print(count_letters("aaaaaAAAAAAAAAAAAAAaaaa"))
+{'a': 9, 'A': 14}
+>>>
+>>> print(count_letters("a really loooooooooooooooooooooooooong string with lots of letters"))
+{'a': 2, ' ': 7, 'r': 3, 'e': 3, 'l': 5, 'y': 1, 'o': 28, 'n': 2, 'g': 2, 's': 3, 't': 5, 'i': 2, 'w': 1, 'h': 1, 'f': 1}
+```
+*In this script, we first initialized an empty dictionary as __dict1__, then going through each letter in the given text.*
+
 ### Iterating over Dictionaries
+
+- *You can iterate over dictionaries using a for loop, just like with strings, lists, and tuples. This will iterate over the sequence of keys in the dictionary. If you want to access the corresponding values associated with the keys, you could use the keys as indexes. Or you can use the __items__ method on the dictionary, like __dictionary.items()__. This method returns a tuple for each element in the dictionary, where the first element in the tuple is the key and the second is the value.*
+
+- *If you only wanted to access the keys in a dictionary, you could use the __keys()__ method on the dictionary: __dictionary.keys()__. If you only wanted the values, you could use the values() method: __dictionary.values()__.*
 
 ### Dictionaries vs. Lists
 
-### Dictionary Methods Cheat Sheet
+- *Dictionaries and lists are both useful and each have strengths in different situations. For example, if you want to store a series of IP addresses to ping, you could put them all into a list or you had a list of host names and their corresponding IP addesses, you might want to pair them as key-values in a dictionary.*
+```Python
+>>> ip_addresses = ['192.168.1.1', '127.0.0.1', '8.8.8.8']
+>>>
+>>> host_addresses = {'router':'192.168.1.1', 'localhost':'127.0.0.1', 'google':'8.8.8.8'}
+```
 
-### Practice Quiz: Dictionaries
+- *Because of the way dictionaries work, it's super easy and fast to search for an element in them. Let's say you have a dictionary that has usernames as keys, and groups they belong to as values. It doesn't matter if you have 10 users or 10,000 users, accessing the entry for a given user will take the same time. But this isn't true for lists. So in general, you want to use dictionaries when you plan on searching for specific elements.*
+
+- *Another difference is the types of values that we can store in lists and dictionaries. In lists you can store any data type, while in dictionaries we can store any data type for the values but the keys are restricted to certain types.*
+
+- *So you can use any immutable data types such as integers, floats, booleans, strings and tuples as dictionary keys, but you can't use lists and other dictionaries as the keys. On the flip, you can use any data types for the values even lists and other dictionaries.*
+
+### Dictionary Methods Cheat Sheet
+#### Syntax of a Dict.
+- *If __x__ is dictionary then:*
+```Python
+x = {key1:value1, key2:value2}
+```
+
+#### Dict. Operations and Methods
+- ***len(dict)*** *- Returns the number of elements in the dictionary*
+
+- ***for key in dict*** *- Iterates over each key*
+
+- ***for keys, values in dict.items()*** *- Iterates over each key-value pair*
+
+- ***key in dict*** *- Checks whether the key is contained in the dictionary*
+
+- ***dict[key]*** *- Returns the associated value*
+
+- ***dict[key] = value*** *- Inserts the assigned value to the key, replaces with new value if the key already exits*
+
+- ***del dict[key]*** *- Deletes elements*
+
+- ***dict.get(key, dafault)*** *- Returns the value respective to key, or returns the default if the key doesn't exist*
+
+- ***dict.keys()*** *- Returns a sequence holding keys*
+
+- ***dict.values()*** *- Returns a sequence of values*
+
+- ***dict.update(other_dict)*** *- Updates the first dictionary with items coming from the other dictionary, existing entries will be replaced and new entries will be added*
+
+- ***dict.clear()*** *- Remove all items from the dictionary*
+
+<br>
+
+***Finally, the Module 4 is completed....***
