@@ -59,7 +59,7 @@
 
 ## Intro to Python
 
-6. ***Fill in the correct Python command to put "My first Python Program" onto the screen.***<br>
+1. ***Fill in the correct Python command to put "My first Python Program" onto the screen.***<br>
 ```Python
 ___("My first Python program")
 ```
@@ -70,10 +70,10 @@ ___("My first Python program")
 print("My first Python Program")
 ```
 
-7. ***Python is an example of what type of programming langauge?***<br>
+2. ***Python is an example of what type of programming langauge?***<br>
 *ans.* *General purpose scripting language*
 
-8. ***Convert this Bash command into Python:***
+3. ***Convert this Bash command into Python:***
 ```Bash
 echo "Have a nice day"
 ```
@@ -82,7 +82,7 @@ echo "Have a nice day"
 print("Have a nice day")
 ```
 
-9. ***Fill in the correct Python commands to put "This is fun!" onto the screen 5 times.***
+4. ***Fill in the correct Python commands to put "This is fun!" onto the screen 5 times.***
 ```Python
 for i in __:
   ___("This is fun!")
@@ -93,7 +93,7 @@ for i in range(5):
   print("This is fun!")
   ```
 
-10. ***Select the Python code snippet that corresponds to the following Javascript snippet:***
+5. ***Select the Python code snippet that corresponds to the following Javascript snippet:***
 ```JavaScript
 for (let i = 0; i < 10; i++) {
         console.log(i);
@@ -110,22 +110,22 @@ for i in range(10):
 
 ## Hello World
 
-11. ***What are functions in Python?***<br>
+1. ***What are functions in Python?***<br>
 *ans.* *Functions are pieces of code that perform a unit of work.*
 
-12. ***What are keywords in Python?***<br>
+2. ***What are keywords in Python?***<br>
 *ans.* *Keywords are reserved words that are used to construct instructions.*
 
-13. ***What does the print function do in Python?***<br>
+3. ***What does the print function do in Python?***<br>
 *ans.* *The print function outputs messages to the screen.*
 
-14. ***Output a message that says, "Programming in Python is fun!" to the screen.***<br>
+4. ***Output a message that says, "Programming in Python is fun!" to the screen.***<br>
 *ans.*
 ```Python
 print("Programming in Python is fun!")
 ```
 
-15. ***Replace the ___ placeholder and calculate the Golden ratio: (1 + √5)/2.***<br>
+5. ***Replace the ___ placeholder and calculate the Golden ratio: (1 + √5)/2.***<br>
 ___Tip: to calculate the square root of a number x, you can use x**(1/2).___
 ```Python
 ratio = ___
@@ -142,28 +142,28 @@ print(ratio)
 
 ## Module 1 Graded Assessment
 
-16. ***What is a computer program?***<br>
+1. ***What is a computer program?***<br>
 *ans.* *A step-by-step recipe of what needs to be done to complete a task, that gets executed by the computer.*
 
-17. ***What is automation?***<br>
+2. ***What is automation?***<br>
 *ans.* *The process of replacing a manual step with one that happens automatically.*
 
-18. ***Which things can be done using Automation? Write down.***<br>
+3. ***Which things can be done using Automation? Write down.***<br>
 *ans.* *Creating a report of how much each sales person has sold in the last month, Setting the home directory and access permissions for new employees joining your company, Designing the new webpage for your company, Populating your company's e-commerce site with the latest products in the catlog.*
 
-19. ***What are some characteristics of the Python progreamming language?***<br>
+4. ***What are some characteristics of the Python progreamming language?***<br>
 *ans.* *Python programs are easy to write and understand, We can practice Python using wen interpreter or codepads as well as executing it locally.*
 
-20. ***How does Python compare to other programming languages?***<br>
+5. ***How does Python compare to other programming languages?***<br>
 *ans.* *Each programming language has its advantages and disadvantages, learning a second programming language seems easier after learning the first.*
 
-21. ***Write a python script that outputs "Automating with Python is fun!" to the screen.***
+6. ***Write a python script that outputs "Automating with Python is fun!" to the screen.***
 *ans.*
 ```Python
 print("Automating with Python is fun!")
 ```
 
-22. ***Fill in the blank so that the code prints "Yellow is the color of sunshine".***<br>
+7. ***Fill in the blank so that the code prints "Yellow is the color of sunshine".***<br>
 ```Python
 color = ___
 thing = ___
@@ -176,7 +176,7 @@ thing = "sunshine"
 print(color + " is the color of " + thing)
 ```
 
-23. ***Keeping in mind there are 86400 seconds per day, write a program that calculates how many seconds there are in a week, if a week is 7 days. Print the result on the screen.***<br>
+8. ***Keeping in mind there are 86400 seconds per day, write a program that calculates how many seconds there are in a week, if a week is 7 days. Print the result on the screen.***<br>
 *ans.*
 ```Python
 seconds_per_day = 86400
@@ -185,14 +185,14 @@ seconds_per_week = 7*86400
 print(seconds_per_week)
 ```
 
-24. ***Use Python to calculate how many different passwords can be formed with 6 lower case English letters.  For a 1 letter password, there would be 26 possibilities.  For a 2 letter password, each letter is independent of the other, so there would be 26 times 26 possibilities.  Using this information, print the amount of possible passwords that can be formed with 6 letters.***<br>
+9. ***Use Python to calculate how many different passwords can be formed with 6 lower case English letters.  For a 1 letter password, there would be 26 possibilities.  For a 2 letter password, each letter is independent of the other, so there would be 26 times 26 possibilities.  Using this information, print the amount of possible passwords that can be formed with 6 letters.***<br>
 *ans.*
 ```Python
 # there are 26 possibilities for a letter and there are 6 letters so,
 print(26**6)
 ```
 
-25. ***Most hard drives are divided into sectors of 512 bytes each.  Our disk has a size of 16 GB. Fill in the blank to calculate how many sectors the disk has.***<br>
+10. ***Most hard drives are divided into sectors of 512 bytes each.  Our disk has a size of 16 GB. Fill in the blank to calculate how many sectors the disk has.***<br>
 ***Note: Your result should be in the format of just a number, not a sentence.***
 ```Python
 disk_size = 16*1024*1024*1024
@@ -214,13 +214,16 @@ print(sector_amount)
 <br>
 <br>
 <br>
+<br>
 
 # Week 2; Basic Python Syntax
+<br>
+<br>
 <br>
 
 ## Expressions to Variables
 
-26. ***In this scenario, two friends are eating dinner at a restaurant. The bill comes in the amount of 47.28 dollars. The friends decide to split the bill evenly between them, after adding 15% tip for the service. Calculate the tip, the total amount to pay, and each friend's share, then output a message saying "Each person needs to pay: " followed by the resulting number.***<br>
+1. ***In this scenario, two friends are eating dinner at a restaurant. The bill comes in the amount of 47.28 dollars. The friends decide to split the bill evenly between them, after adding 15% tip for the service. Calculate the tip, the total amount to pay, and each friend's share, then output a message saying "Each person needs to pay: " followed by the resulting number.***<br>
 ```Python
 bill = ___
 tip = bill * ___
@@ -237,7 +240,7 @@ share = total/2
 print("Each person needs to pay: " + str(share))
 ```
 
-27. ***This code is supposed to take two numbers, divide one by another so that the result is equal to 1, and display the result on the screen. Unfortunately, there is an error in the code. Find the error and fix it, so that the output is correct.***<br>
+2. ***This code is supposed to take two numbers, divide one by another so that the result is equal to 1, and display the result on the screen. Unfortunately, there is an error in the code. Find the error and fix it, so that the output is correct.***<br>
 ```Python
 numerator = 10
 denominator = 0
@@ -252,7 +255,7 @@ result = numerator / (denominator+10)
 print(int(result))
 ```
 
-28. ***Combine the variables to display the sentence "How do you like Python so far?" ***
+3. ***Combine the variables to display the sentence "How do you like Python so far?" ***
 ```Python
 word1 = "How"
 word2 = "do"
@@ -277,7 +280,7 @@ word7 = "far?"
 print(word1, word2, word3, word4, word5, word6, word7)
 ```
 
-29. ***This code is supposed to display "2 + 2 = 4" on the screen, but there is an error. Find the error in the code and fix it, so that the output is correct.***
+4. ***This code is supposed to display "2 + 2 = 4" on the screen, but there is an error. Find the error in the code and fix it, so that the output is correct.***
 ```Python
 print("2 + 2 = " + (2 + 2))
 ```
@@ -286,7 +289,7 @@ print("2 + 2 = " + (2 + 2))
 print("2 + 2 = " + str(2 + 2))
 ```
 
-30. ***What do you call a combination of numbers, symbols, or other values that produce a result when evaluated?***<br>
+5. ***What do you call a combination of numbers, symbols, or other values that produce a result when evaluated?***<br>
 *ans.* *An expression*
 <br>
 <br>
@@ -294,7 +297,7 @@ print("2 + 2 = " + str(2 + 2))
 
 ## Functions
 
-31. ***This function converts miles into kilometers. (1) Complete the function to return the result of the conversion, (2) Call the function to convert the trip distance from miles to kms, (3) Fill in the blank to print the result of the conversion and (4) Calculate the round-trip in kms by doubling the result, and fill in the blank to print the result.***
+1. ***This function converts miles into kilometers. (1) Complete the function to return the result of the conversion, (2) Call the function to convert the trip distance from miles to kms, (3) Fill in the blank to print the result of the conversion and (4) Calculate the round-trip in kms by doubling the result, and fill in the blank to print the result.***
 ```Python
 # 1) Complete the function to return the result of the conversion
 def convert_distance(miles):
@@ -331,7 +334,7 @@ print("The distance in kilometers is " + str(my_trip_km))
 print("The round-trip in kilometers is " + str(my_trip_km*2))
 ```
 
-32. ***This function compares two numbers and returns them in increasing order. Fill in the blank, so the print statement displays the result of the function call in order. Hint: if a function returns multiple values, do not forget to store these values in multiple variables.***<br>
+2. ***This function compares two numbers and returns them in increasing order. Fill in the blank, so the print statement displays the result of the function call in order. Hint: if a function returns multiple values, do not forget to store these values in multiple variables.***<br>
 ```Python
 # This function compares two numbers and returns them
 # in increasing order.
@@ -362,10 +365,10 @@ smaller, bigger = order_numbers(100, 99)
 print(smaller, bigger)
 ```
 
-33. ***What are the values passed into functions as input called?***<br>
+3. ***What are the values passed into functions as input called?***<br>
 *ans.* *Parameters or Arguments.*
 
-34. ***Let's revisit our lucky_number function. We want to change it, so that instead of printing the message, it returns the message. This way, the calling line can print the message, or do something else with it if needed. Fill in the blanks to complete the code to make it work.***
+4. ***Let's revisit our lucky_number function. We want to change it, so that instead of printing the message, it returns the message. This way, the calling line can print the message, or do something else with it if needed. Fill in the blanks to complete the code to make it work.***
 ```Python
 def lucky_number(name):
   number = len(name) * 9
@@ -387,7 +390,7 @@ print(lucky_number("Kay"))
 print(lucky_number("Cameron"))
 ```
 
-35. ***What is the purpose of the <code>def</code> keyword?***<br>
+5. ***What is the purpose of the <code>def</code> keyword?***<br>
 *ans.* *Used to define a new function*
 <br>
 <br>
@@ -395,10 +398,76 @@ print(lucky_number("Cameron"))
 
 ## Conditionals
 
-36. ___What is the value of this Python expression: (2**2)==4?___<br>
+1. ___What is the value of this Python expression: (2**2)==4?___<br>
 *ans.* *True*
 ```Python
 >>> print((2**2)==4)
+True
+```
+
+2. ***Complete the script by filling in the missing parts. The function receives a name, then returns a greeting based on whether or not that name is "Taylor".***<br>
+```Python
+def greeting(name):
+  if ___ == "Taylor":
+    return "Welcome back Taylor!"
+  ___:
+    return "Hello there, " + name
+
+print(greeting("Taylor"))
+print(greeting("John"))
+```
+*ans.*
+```Python
+>>> def greeting(name):
+...     if name == "Taylor":
+...        return "Welcome back Taylor"
+...     else:
+...         return "Hello there, " + name
+...
+>>> print(greeting("Taylor"))
+Welcome back Taylor
+>>> print(greeting("John"))
+Hello there, John
+```
+
+3. ***What's the output of this code if number equals 10?***
+```Python
+if number > 11: 
+  print(0)
+elif number != 10:
+  print(1)
+elif number >= 20 or number < 12:
+  print(2)
+else:
+  print(3)
+```
+*ans.*
+```Python
+>>> def numeric(number):
+...     if number > 11:
+...         print(0)
+...     elif number != 10:
+...         print(1)
+...     elif number >= 20 or number < 12:
+...         print(2)
+...     else:
+...         print(3)
+...
+>>> numeric(10)
+2
+```
+
+4. ___Is "A dog" smaller than "A mouse"? Is 9999+8888 smaller or larger than 100*100? Replace the sign in the following code to let Python check it for you and then answer.___
+```Python
+print("A dog" + "A mouse")
+print(9999+8888 + 100*100)
+```
+*ans.*
+```Python
+>>> print("A dog" < "A mouse")
+True
+>>>
+>>> print(9999+8888 > 100*100)
 True
 ```
 ## Module 2 Graded Assessment
