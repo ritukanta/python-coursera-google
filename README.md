@@ -470,7 +470,268 @@ True
 >>> print(9999+8888 > 100*100)
 True
 ```
+
+5. ___If a filesystem has a block size of 4096 bytes, this means that a file comprised of only one byte will still use 4096 bytes of storage. A file made up of 4097 bytes will use 4096*2=8192 bytes of storage. Knowing this, can you fill in the gaps in the calculate_storage function below, which calculates the total number of bytes needed to store a file of a given size?___
+```Python
+def calculate_storage(filesize):
+    block_size = 4096
+    # Use floor division to calculate how many blocks are fully occupied
+    full_blocks = ___
+    # Use the modulo operator to check whether there's any remainder
+    partial_block_remainder = ___
+    # Depending on whether there's a remainder or not, return
+    # the total number of bytes required to allocate enough blocks
+    # to store your data.
+    if partial_block_remainder > 0:
+        return ___
+    return ___
+
+print(calculate_storage(1))    # Should be 4096
+print(calculate_storage(4096)) # Should be 4096
+print(calculate_storage(4097)) # Should be 8192
+print(calculate_storage(6000)) # Should be 8192
+```
+*ans.*
+```Python
+      def calculate_storage(filesize):
+          block_size = 4096
+          # Use floor division to calculate how many blocks are fully occupied
+          full_blocks = filesize // block_size
+          # Use the modulo operator to check whether there's any remainder
+          partial_block_remainder = filesize % block_size
+          # Depending on whether there's a remainder or not, return
+          # the total number of bytes required to allocate enough blocks
+          # to store your data.
+          if partial_block_remainder > 0:
+            return 4096 * (full_blocks + 1)
+          return 4096
+
+print(calculate_storage(1))    # Should be 4096
+print(calculate_storage(4096)) # Should be 4096
+print(calculate_storage(4097)) # Should be 8192
+print(calculate_storage(6000)) # Should be 8192
+```
+
 ## Module 2 Graded Assessment
+
+1. ***Complete the function by filling in the missing parts. The color_translator function receives the name of a color, then prints its hexadecimal value. Currently it only supports the three additive primary colors: red, green, blue, so it returns for all other colors.***
+```Python
+def color_translator(color):
+	if ___ == "red":
+		hex_color = "#ff0000"
+	elif ___ == "green":
+		hex_color = "#00ff00"
+	elif ___ == "blue":
+		hex_color = "#0000ff"
+	___:
+		hex_color = "unknown"
+	return ___
+
+print(color_translator("blue")) # Should be #0000ff
+print(color_translator("yellow")) # Should be unknown
+print(color_translator("red")) # Should be #ff0000
+print(color_translator("black")) # Should be unknown
+print(color_translator("green")) # Should be #00ff00
+print(color_translator("")) # Should be unknown
+```
+*ans.*
+```Python
+      def color_translator(color):
+            if color == "red":
+	            hex_color = "#ff0000"
+	      elif color == "green":
+		      hex_color = "#00ff00"
+	      elif color == "blue":
+		      hex_color = "#0000ff"
+	      else:
+		      hex_color = "unknown"
+	      return hex_color
+
+print(color_translator("blue")) # Should be #0000ff
+print(color_translator("yellow")) # Should be unknown
+print(color_translator("red")) # Should be #ff0000
+print(color_translator("black")) # Should be unknown
+print(color_translator("green")) # Should be #00ff00
+print(color_translator("")) # Should be unknown
+```
+
+2. ***What's the value of this Python expression: "big" > "small"?***<br>
+*ans. False*
+
+3. ***What is the elif keyword used for?***<br>
+*ans. Two handle more than two comparison cases*
+
+4. ***Students in a class receive their grades as Pass/Fail. Scores of 60 or more(out of 100) mean that the grade is "Pass". For lower scores, the grade is "Fail". In addition, scores above 95(not included) are graded as "Top Score". Fill in this function so that it returns the proper grades.***
+```Python
+def exam_grade(score):
+	if ___:
+		grade = "Top Score"
+	elif ___:
+		grade = "Pass"
+	else:
+		grade = "Fail"
+	return grade
+
+print(exam_grade(65)) # Should be Pass
+print(exam_grade(55)) # Should be Fail
+print(exam_grade(60)) # Should be Pass
+print(exam_grade(95)) # Should be Pass
+print(exam_grade(100)) # Should be Top Score
+print(exam_grade(0)) # Should be Fail
+```
+*ans.*
+```Python
+      def exam_grade(score):
+	      if score > 95:
+		      grade = "Top Score"
+	      elif score >= 60:
+		      grade = "Pass"
+	      else:
+		      grade = "Fail"
+	      return grade
+
+print(exam_grade(65)) # Should be Pass
+print(exam_grade(55)) # Should be Fail
+print(exam_grade(60)) # Should be Pass
+print(exam_grade(95)) # Should be Pass
+print(exam_grade(100)) # Should be Top Score
+print(exam_grade(0)) # Should be Fail
+```
+
+5. ***What's the value of this Python expression: 11 % 5?***<br>
+*ans. 1*
+
+6. ***Complete the body of the format_name function. This function receives the first_name and last_name parameters and then returns a properly formatted string.***<br>
+***Specificaly:***<br>
+***If both the last_name and the first_name parameters are supplied, the funtion should return like so;***
+```Python
+print(format_name("Ella", "Fitzgerald"))
+Name: Fitzgerald, Ella
+```
+```Python
+def format_name(first_name, last_name):
+	# code goes here
+	
+	return string 
+
+print(format_name("Ernest", "Hemingway"))
+# Should return the string "Name: Hemingway, Ernest"
+
+print(format_name("", "Madonna"))
+# Should return the string "Name: Madonna"
+
+print(format_name("Voltaire", ""))
+# Should return the string "Name: Voltaire"
+
+print(format_name("", ""))
+# Should return an empty string
+```
+*ans.*
+```Python
+def format_name(first_name, last_name):
+    string = "Name: " + first_name + ", " + last_name
+    if first_name == "":
+        return "Name: " + last_name
+    elif last_name == "":
+        return "Name: " + first_name
+    elif first_name == "" and last_name == "":
+        return ""
+    else:
+        return string
+
+
+print(format_name("Ernest", "Hemingway"))
+print(format_name("", "Madonna"))
+print(format_name("Voltaire", ""))
+print(format_name("", ""))
+```
+
+7. ***The longest_word function is used to compare 3 words. It should return the word with the most number of characters (and the first in the list when they have the same length). Fill in the blank to make this happen.***
+```Python
+def longest_word(word1, word2, word3):
+	if len(word1) >= len(word2) and len(word1) >= len(word3):
+		word = word1
+	elif ___:
+		word = word2
+	else:
+		word = word3
+	return(word)
+
+print(longest_word("chair", "couch", "table"))
+print(longest_word("bed", "bath", "beyond"))
+print(longest_word("laptop", "notebook", "desktop"))
+```
+*ans.*
+```Python
+      def longest_word(word1, word2, word3):
+      	if len(word1) >= len(word2) and len(word1) >= len(word3):
+      		word = word1
+      	elif len(word2) >= len(word1) and len(word2) >= len(word3):
+      		word = word2
+      	else:
+      		word = word3
+      	return(word)
+
+print(longest_word("chair", "couch", "table"))
+print(longest_word("bed", "bath", "beyond"))
+print(longest_word("laptop", "notebook", "desktop"))
+```
+
+8. ***What's the output of this code?***<br>
+```Python
+def sum(x, y):
+		return(x+y)
+print(sum(sum(1,2), sum(3,4)))
+```
+*ans 10*
+
+9. ___What's the output of this Python expression: ((10 >= 5 * 2) and (10 <= 5 * 2))?___<br>
+*ans. True*
+
+10. ***The fractional_part function divides the numerator by the denominator, and returns just the fractional part (a number between 0 and 1). Complete the body of the function so that it returns the right number.
+Note: Since division by 0 produces an error, if the denominator is 0, the function should return 0 instead of attempting the division.***
+```Python
+def fractional_part(numerator, denominator):
+	# Operate with numerator and denominator to 
+# keep just the fractional part of the quotient
+	return 0
+
+print(fractional_part(5, 5)) # Should be 0
+print(fractional_part(5, 4)) # Should be 0.25
+print(fractional_part(5, 3)) # Should be 0.66...
+print(fractional_part(5, 2)) # Should be 0.5
+print(fractional_part(5, 0)) # Should be 0
+print(fractional_part(0, 5)) # Should be 0
+```
+*ans.*
+```Python
+def fractional_part(nume, deno):
+    fraction = nume/deno - nume//deno
+    if nume == deno:
+        return 0
+    elif nume == 0:
+        return 0
+    elif deno == 0:
+        return 0
+    elif nume != deno:
+        return fraction
+
+
+
+print(fractional_part(5, 5))
+print(fractional_part(5, 4))
+print(fractional_part(5, 3))
+print(fractional_part(5, 2))
+#print(fractional_part(5, 0))
+print(fractional_part(0, 5))
+```
+
+
+
+
+
+
+
 
 # Week 3; Loops
 ## While Loops
