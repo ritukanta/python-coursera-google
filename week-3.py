@@ -67,3 +67,41 @@ def multiplication_table(number):
 multiplication_table(3)
 multiplication_table(5)
 multiplication_table(8)
+
+
+# for loops
+# 2
+def factorial(n):
+    result = 1
+    for x in range(1, n):
+        result *= x
+    return result
+
+
+for n in range(0, 10):
+    print(n, factorial(n + 1))
+
+# 3
+for y in range(1, 11):
+    print(y**3)
+
+
+# 4
+for m in range(101):
+    if m % 7 == 0:
+        print(m)
+
+# 5
+
+
+def retry(operation, attempts):
+    for t in range(attempts):
+        if operation():
+            print("Attempt " + str(t) + " succeeded")
+            break
+        else:
+            print("Attempt " + str(t) + " failed")
+
+
+retry(create_user, 3)
+retry(stop_service, 5)
