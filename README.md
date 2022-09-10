@@ -999,10 +999,11 @@ multiplication_table(8)
 
 ## For Loops
 
-1. ***How are while loops and for loops different in Python?***<br>
-*ans. While loops iterate while a condition is true, for loops iterate through a sequence of elements.*
+1. **_How are while loops and for loops different in Python?_**<br>
+   _ans. While loops iterate while a condition is true, for loops iterate through a sequence of elements._
 
-2. ___Fill in the blanks to make the factorial function return the factorial of n. Then, print the first 10 factorials (from 0 to 9) with the corresponding number. Remember that the factorial of a number is defined as the product of an integer and all integers before it. For example, the factorial of five (5!) is equal to 1 * 2 * 3 * 4 *5=120. Also recall that the factorial of zero (0!) is equal to 1.___
+2. **_Fill in the blanks to make the factorial function return the factorial of n. Then, print the first 10 factorials (from 0 to 9) with the corresponding number. Remember that the factorial of a number is defined as the product of an integer and all integers before it. For example, the factorial of five (5!) is equal to 1 * 2 * 3 * 4 *5=120. Also recall that the factorial of zero (0!) is equal to 1._**
+
 ```Python
 def factorial(n):
     result = 1
@@ -1013,7 +1014,9 @@ def factorial(n):
 for n in range(___,___):
     print(n, factorial(n+___))
 ```
-*ans.*
+
+_ans._
+
 ```Python
 def factorial(n):
     result = 1
@@ -1024,20 +1027,23 @@ for n in range(1, 10):
     print(n, factorial(n+1))
 ```
 
-3. ___Write a script that prints the first 10 cube numbers (X ** 3), starting with x=1 and ending with x=10.___
+3. **_Write a script that prints the first 10 cube numbers (X \*\* 3), starting with x=1 and ending with x=10._**
+
 ```Python
 for x in range(1,11):
   print(x**3)
 ```
 
-4. ***Write a script that prints the multiples of 7 between 0 and 100. Print one multiple per line and avoid printing any numbers that aren't multiples of 7. Remember that 0 is also a multiple of 7.***
+4. **_Write a script that prints the multiples of 7 between 0 and 100. Print one multiple per line and avoid printing any numbers that aren't multiples of 7. Remember that 0 is also a multiple of 7._**
+
 ```Python
 for m in range(101):
     if m % 7 == 0:
         print(m)
 ```
 
-5. ***The retry function tries to execute an operation that might fail, it retries the operation for a number of attempts.  Currently the code will keep executing the function even if it succeeds. Fill in the blank so the code stops trying after the operation succeeded.***
+5. **_The retry function tries to execute an operation that might fail, it retries the operation for a number of attempts. Currently the code will keep executing the function even if it succeeds. Fill in the blank so the code stops trying after the operation succeeded._**
+
 ```Python
 def retry(operation, attempts):
   for n in range(attempts):
@@ -1050,7 +1056,9 @@ def retry(operation, attempts):
 retry(create_user, 3)
 retry(stop_service, 5)
 ```
-*ans.*
+
+_ans._
+
 ```Python
 def retry(operation, attempts):
   for n in range(attempts):
@@ -1064,20 +1072,102 @@ retry(create_user, 3)
 retry(stop_service, 5)
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Recursion(Optional)
+
+1. **_What is recursion used for?_**<br>
+   _ans. Recursion lets us tackle complex problems by reducing the problem to a simpler one._
+
+2. **_Which activities are good use cases for recursive programs?_**<br>
+   _ans. Going through a file system collecting information related to directories and files, Managing permissions assigned to groups inside a company, when each group can contain both subgroups and users._
+
+3. **_Fill in the blanks to make the is_power_of function return whether the number is a power of the given base. Note: base is assumed to be a positive number. Tip: for functions that return a boolean value, you can return the result of a comparison._**
+
+```Python
+def is_power_of(number, base):
+  # Base case: when number is smaller than base.
+  if number < base:
+    # If number is equal to 1, it's a power (base**0).
+    return __
+
+  # Recursive case: keep dividing number by base.
+  return is_power_of(__, ___)
+
+print(is_power_of(8,2)) # Should be True
+print(is_power_of(64,4)) # Should be True
+print(is_power_of(70,10)) # Should be False
+```
+
+_ans._
+
+```Python
+def is_power_of(number, base):
+  # Base case: when number is smaller than base.
+  if number < base:
+    # If number is equal to 1, it's a power (base**0).
+    return number ==1
+
+  # Recursive case: keep dividing number by base.
+  return is_power_of(number//base, base)
+
+print(is_power_of(8,2)) # Should be True
+print(is_power_of(64,4)) # Should be True
+print(is_power_of(70,10)) # Should be False
+```
+
+4. **_The count_users function recursively counts the amount of users that belong to a group in the company system, by going through each of the members of a group and if one of them is a group, recursively calling the function and counting the members. But it has a bug! Can you spot the problem and fix it?_**
+
+```Python
+def count_users(group):
+  count = 0
+  for member in get_members(group):
+    count += 1
+    if is_group(member):
+      count += count_users(member)
+  return count
+
+print(count_users("sales")) # Should be 3
+print(count_users("engineering")) # Should be 8
+print(count_users("everyone")) # Should be 18
+```
+
+_ans._
+
+```Python
+def count_users(group):
+  count = 0
+  for member in get_members(group):
+    if is_group(member):
+      count += count_users(member)
+    else:
+      count += 1
+  return count
+
+print(count_users("sales")) # Should be 3
+print(count_users("engineering")) # Should be 8
+print(count_users("everyone")) # Should be 18
+```
+
+5. **_Implement the sum_positive_numbers function, as a recursive function that returns the sum of all positive numbers between the number n received and 1. For example, when n is 3 it should return 1+2+3=6, and when n is 5 it should return 1+2+3+4+5=15._**
+
+```Python
+def sum_positive_numbers(n):
+  return 0
+
+print(sum_positive_numbers(3)) # Should be 6
+print(sum_positive_numbers(5)) # Should be 15
+```
+
+_ans._
+
+```Python
+def sum_positive_numbers(n):
+  if n == 0:
+    return 0
+  return n + sum_positive_numbers(n-1)
+
+print(sum_positive_numbers(3)) # Should be 6
+print(sum_positive_numbers(5)) # Should be 15
+```
 
 ## Module 3 Graded Assessment
 

@@ -103,5 +103,46 @@ def retry(operation, attempts):
             print("Attempt " + str(t) + " failed")
 
 
-retry(create_user, 3)
-retry(stop_service, 5)
+#retry(create_user, 3)
+#retry(stop_service, 5)
+
+
+# Recursion
+# 3
+def is_power_of(number1, base):
+    if number1 < base:
+        return number1 == 1
+    return is_power_of(number1//base, base)
+
+
+print(is_power_of(8, 2))
+print(is_power_of(64, 4))
+print(is_power_of(70, 10))
+
+
+# 4
+# def count_users(group):
+# count = 0
+# for member in get_members(group):
+#  if is_group(member):
+#     count += count_users(member)
+#  else:
+#     count += 1
+# return count
+
+
+# print(count_users("sales"))
+# print(count_users("engineering"))
+# print(count_users("everyone"))
+
+# 5
+
+
+def sum_positive_numbers(k):
+    if k == 0:
+        return 0
+    return k + sum_positive_numbers(k-1)
+
+
+print(sum_positive_numbers(3))
+print(sum_positive_numbers(5))
