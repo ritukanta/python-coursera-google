@@ -146,3 +146,108 @@ def sum_positive_numbers(k):
 
 print(sum_positive_numbers(3))
 print(sum_positive_numbers(5))
+
+
+# Module 3 Graded Assessment
+# 1
+numb = 1
+while numb <= 7:
+    print(numb, end=" ")
+    numb += 1
+
+# 2
+
+
+def show_letters(word):
+    for w in word:
+        print(w)
+
+
+show_letters("Hello")
+
+# 3
+
+
+def digits(i):
+    count = 0
+    if i == 0:
+        return 1
+    while i >= 1:
+        count += 1
+        i = i/10
+    return count
+
+
+print(digits(25))
+print(digits(144))
+print(digits(1000))
+print(digits(0))
+
+# 4
+
+
+def multiplication_table2(start, stop):
+    for x in range(1, 4):
+        for y in range(1, 4):
+            print(str(x * y), end=" ")
+        print()
+
+
+multiplication_table2(1, 3)
+
+
+# 5
+def counter(start, stop):
+    x = start
+    if x > stop:
+        return_string = "Counting down: "
+        while x >= stop:
+            return_string += str(x)
+            if x != stop:
+                return_string += ","
+            x -= 1
+    else:
+        return_string = "Counting up: "
+        while x <= stop:
+            return_string += str(x)
+            if x != stop:
+                return_string += ","
+            x += 1
+    return return_string
+
+
+print(counter(1, 10))
+print(counter(2, 1))
+print(counter(5, 5))
+
+
+# 6
+def even_numbers(maximum):
+    return_string1 = ""
+    for z in range(2, maximum+1):
+        if z % 2 == 0:
+            return_string1 += str(z)
+    return return_string1
+
+
+print(even_numbers(6))
+print(even_numbers(10))
+print(even_numbers(1))
+print(even_numbers(3))
+print(even_numbers(0))
+
+# 8
+for k in range(1, 10, 3):
+    print(k)
+
+# 9
+for m in range(10):
+    for n in range(m):
+        print(n)
+
+# 10
+
+
+def votes(params):
+    for vote in params:
+        print("Possible option: " + vote)

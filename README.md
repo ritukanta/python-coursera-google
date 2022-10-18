@@ -1171,6 +1171,244 @@ print(sum_positive_numbers(5)) # Should be 15
 
 ## Module 3 Graded Assessment
 
+1. **_Fill in the blanks of this code to print out the numbers 1 through 7?_**<br>
+
+```Python
+number = 1
+while number ___ 7:
+	print(number, end=" ")
+	___
+```
+
+_ans._
+
+```Python
+number = 1
+while number <= 7:
+	print(number, end=" ")
+	number += 1
+```
+
+2. **_The show_letters function should print out each letter of a word on a separate line. Fill in the blanks to make that happen._**
+
+```Python
+def show_letters(word):
+	for __:
+		print(__)
+
+show_letters("Hello")
+# Should print one line per letter
+```
+
+_ans._
+
+```Python
+def show_letters(word):
+	for w in word:
+		print(w)
+
+show_letters("Hello")
+# Should print one line per letter
+```
+
+3. **_Complete the function digits(n) that returns how many digits the number has. For example: 25 has 2 digits and 144 has 3 digits. Tip: you can figure out the digits of a number by dividing it by 10 once per digit until there are no digits left._**
+
+```Python
+def digits(n):
+	count = 0
+	if n == 0:
+	  ___
+	while (___):
+		count += 1
+		___
+	return count
+
+print(digits(25))   # Should print 2
+print(digits(144))  # Should print 3
+print(digits(1000)) # Should print 4
+print(digits(0))    # Should print 1
+```
+
+_ans._
+
+```Python
+def digits(n):
+	count = 0
+	if n == 0:
+	  return 1
+	while n >= 1:
+		count += 1
+		n = n/10
+	return count
+
+print(digits(25))   # Should print 2
+print(digits(144))  # Should print 3
+print(digits(1000)) # Should print 4
+print(digits(0))    # Should print 1
+```
+
+4. **_This function prints out a multiplication table (where each number is the result of multiplying the first number of its row by the number at the top of its column). Fill in the blanks so that calling multiplication_table(1, 3) will print out:_**<br>
+   <br>
+
+_1 2 3_
+
+<br>
+
+_2 4 6_
+
+<br>
+
+_3 6 9_
+
+```Python
+def multiplication_table(start, stop):
+	for x in ___:
+		for y in ___:
+			print(str(x*y), end=" ")
+		print()
+
+multiplication_table(1, 3)
+# Should print the multiplication table shown above
+```
+
+_ans._
+
+```Python
+def multiplication_table(start, stop):
+	for x in range(1, 4):
+		for y in range(1, 4):
+			print(str(x*y), end=" ")
+		print()
+
+multiplication_table(1, 3)
+# Should print the multiplication table shown above
+```
+
+5. **_The counter function counts down from start to stop when start is bigger than stop, and counts up from start to stop otherwise. Fill in the blanks to make this work correctly._**
+
+```Python
+def counter(start, stop):
+	x = start
+	if ___:
+		return_string = "Counting down: "
+		while x >= stop:
+			return_string += str(x)
+			if ___:
+				return_string += ","
+			___
+	else:
+		return_string = "Counting up: "
+		while x <= stop:
+			return_string += str(x)
+			if ___:
+				return_string += ","
+			___
+	return return_string
+
+print(counter(1, 10)) # Should be "Counting up: 1,2,3,4,5,6,7,8,9,10"
+print(counter(2, 1)) # Should be "Counting down: 2,1"
+print(counter(5, 5)) # Should be "Counting up: 5"
+```
+
+_ans._
+
+```Python
+def counter(start, stop):
+	x = start
+	if x > stop:
+		return_string = "Counting down: "
+		while x >= stop:
+			return_string += str(x)
+			if x != stop:
+				return_string += ","
+			x -= 1
+	else:
+		return_string = "Counting up: "
+		while x <= stop:
+			return_string += str(x)
+			if x != stop:
+				return_string += ","
+			x += 1
+	return return_string
+
+print(counter(1, 10)) # Should be "Counting up: 1,2,3,4,5,6,7,8,9,10"
+print(counter(2, 1)) # Should be "Counting down: 2,1"
+print(counter(5, 5)) # Should be "Counting up: 5"
+```
+
+6. **_The even_numbers function returns a space-separated string of all positive numbers that are divisible by 2, up to and including the maximum that's passed into the function. For example, even_numbers(6) returns "2 4 6". Fill in the blank to make this work._**
+
+```Python
+def even_numbers(maximum):
+	return_string = ""
+	for x in ___:
+		return_string += str(x) + " "
+	return return_string.strip()
+
+print(even_numbers(6))  # Should be 2 4 6
+print(even_numbers(10)) # Should be 2 4 6 8 10
+print(even_numbers(1))  # No numbers displayed
+print(even_numbers(3))  # Should be 2
+print(even_numbers(0))  # No numbers displayed
+```
+
+_ans._
+
+```Python
+def even_numbers(maximum):
+	return_string = ""
+	for x in range(2, maximum+1):
+		if x%2 == 0:
+			return_string += str(x) + " "
+	return return_string.strip()
+
+print(even_numbers(6))  # Should be 2 4 6
+print(even_numbers(10)) # Should be 2 4 6 8 10
+print(even_numbers(1))  # No numbers displayed
+print(even_numbers(3))  # Should be 2
+print(even_numbers(0))  # No numbers displayed
+```
+
+7. **_The following code raises an error when executed. What's the reason for the error?_**<br>
+
+```Python
+def decade_counter():
+	while year < 50:
+		year += 10
+	return year
+```
+
+_ans. Failure to initialize variables_
+
+8. **_What is the value of x at the end of the following code?_**<br>
+
+```Python
+for x in range(1, 10, 3):
+    print(x)
+```
+
+_ans. 7_
+
+9. **_What is the value of y at the end of the following code?_**<br>
+
+```Python
+for x in range(10):
+    for y in range(x):
+        print(y)
+```
+
+_ans. 8_
+
+10. **_How does this function need to be called to print yes, no, and maybe as possible options to vote for?_**
+
+```Python
+def votes(params):
+	for vote in params:
+	    print("Possible option:" + vote)
+```
+
+_ans. votes( [ 'yes', 'no', 'maybe' ] )_
+
 # week 4; Strings, Lists and Dictionaries
 
 ## Strings
