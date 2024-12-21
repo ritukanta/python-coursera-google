@@ -43,40 +43,13 @@
 
 - *I am not going to make a dedicated page for installation for Python Interpreter. Don't wait for it. I don't think there's any lack of that on Internet. Simply install from [Python Org](https://www.python.org/downloads/) as per ur Operating System whatever it is; Windows, Linux or Mac. On Windows, you can use Powershell command line for Python after installing the interpreter. Just hit enter "python" there and there you go. Still I would recommend prefer YT for a proper installtion.*
 
-- *This is not going to be that tough fr.*<br>
-<br>
-<br>
-
-1. *[Week 1: Hello Python](https://github.com/ritukanta/Python/tree/week-1 "Hello Python")*<br>
-<br>
-
-2. *[Week 2: Basic Python Syntax](https://github.com/ritukanta/Python/tree/week-2 "Basic Python Syntax")*<br>
-<br>
-
-3. *[Week 3: Loops](https://github.com/ritukanta/Python/tree/week-3 "Loops")*<br>
-<br>
-
-4. *[Week 4: Strings, Lists, Dictionaries](https://github.com/ritukanta/Python/tree/week-4 "Strings, Lists and Dictionaries")*<br>
-<br>
-
-5. *[Week 5: Object Oriented Programming](https://github.com/ritukanta/Python/tree/week-5 "Object Oriented Programming")*<br>
-<br>
-
-6. *[Week 6: Final Project](https://github.com/ritukanta/Python/tree/week-6 "Final Project")*<br>
-
-
-<br>
-<br>
+- *This is not going to be that tough fr.*
 
 ## Videos from All Modules
 
-- *You can download the videos from all the six modules either from __Mega__ or from __Gdrive__. These videos are super useful in the time when you've any trouble with textual lessons.*<br>
-<br>
-
-> *<code><<<<<<<[Mega](https://mega.nz/file/qUsmECSQ#hJ-1UAvM3NvJjPYqjceiJO-igj5lExWJZMxBezRZR2Y)>>>>>>></code>*<br>
+- *You can download the videos from all the six modules either from __Gdrive__. These videos are super useful in the time when you've any trouble with textual lessons.*<br>
 <br>
 <br>
 
 > *<code><<<<<<<[Gdrive](https://drive.google.com/file/d/1kV8cmd8WanjFOsGsCJiPXyu87khZ86el/view?usp=sharing)>>>>>>></code>*<br>
-<br>
 <br>
